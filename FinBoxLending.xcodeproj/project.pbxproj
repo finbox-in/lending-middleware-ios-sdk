@@ -1,0 +1,713 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D8CBA602B0A84B0005D4275 /* FinBoxLending.docc in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA5F2B0A84B0005D4275 /* FinBoxLending.docc */; };
+		6D8CBA662B0A84B0005D4275 /* FinBoxLending.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8CBA5B2B0A84B0005D4275 /* FinBoxLending.framework */; };
+		6D8CBA6B2B0A84B0005D4275 /* FinBoxLendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA6A2B0A84B0005D4275 /* FinBoxLendingTests.swift */; };
+		6D8CBA6C2B0A84B0005D4275 /* FinBoxLending.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D8CBA5E2B0A84B0005D4275 /* FinBoxLending.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D8CBA7A2B0A860A005D4275 /* FinBoxLending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA792B0A860A005D4275 /* FinBoxLending.swift */; };
+		6D8CBA7C2B0A8BE0005D4275 /* FinBoxLendingPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA7B2B0A8BE0005D4275 /* FinBoxLendingPref.swift */; };
+		6D8CBA7F2B0A8CE5005D4275 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA7E2B0A8CE5005D4275 /* Constants.swift */; };
+		6D8CBA832B0B4F88005D4275 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA822B0B4F88005D4275 /* SessionViewModel.swift */; };
+		6D8CBA852B0B6223005D4275 /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA842B0B6223005D4275 /* temp.swift */; };
+		6D8CBA882B0B6573005D4275 /* SessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA872B0B6573005D4275 /* SessionRequest.swift */; };
+		6D8CBA8A2B0B67F1005D4275 /* LendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA892B0B67F1005D4275 /* LendingView.swift */; };
+		6D8CBA8C2B0B6966005D4275 /* FinBoxWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA8B2B0B6966005D4275 /* FinBoxWebView.swift */; };
+		6D8CBA902B0B6BB8005D4275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA8F2B0B6BB8005D4275 /* Utils.swift */; };
+		6D8CBA982B0B6EDE005D4275 /* SampleAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA972B0B6EDE005D4275 /* SampleAppApp.swift */; };
+		6D8CBA9A2B0B6EDE005D4275 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA992B0B6EDE005D4275 /* ContentView.swift */; };
+		6D8CBA9C2B0B6EE0005D4275 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8CBA9B2B0B6EE0005D4275 /* Assets.xcassets */; };
+		6D8CBA9F2B0B6EE0005D4275 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8CBA9E2B0B6EE0005D4275 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6D8CBA672B0A84B0005D4275 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D8CBA522B0A84B0005D4275 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D8CBA5A2B0A84B0005D4275;
+			remoteInfo = FinBoxLending;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6D8CBA5B2B0A84B0005D4275 /* FinBoxLending.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FinBoxLending.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8CBA5E2B0A84B0005D4275 /* FinBoxLending.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinBoxLending.h; sourceTree = "<group>"; };
+		6D8CBA5F2B0A84B0005D4275 /* FinBoxLending.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FinBoxLending.docc; sourceTree = "<group>"; };
+		6D8CBA652B0A84B0005D4275 /* FinBoxLendingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinBoxLendingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8CBA6A2B0A84B0005D4275 /* FinBoxLendingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxLendingTests.swift; sourceTree = "<group>"; };
+		6D8CBA752B0A84EC005D4275 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		6D8CBA762B0A854F005D4275 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6D8CBA772B0A85A1005D4275 /* Lending.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Lending.podspec; sourceTree = "<group>"; };
+		6D8CBA792B0A860A005D4275 /* FinBoxLending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxLending.swift; sourceTree = "<group>"; };
+		6D8CBA7B2B0A8BE0005D4275 /* FinBoxLendingPref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxLendingPref.swift; sourceTree = "<group>"; };
+		6D8CBA7E2B0A8CE5005D4275 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6D8CBA822B0B4F88005D4275 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		6D8CBA842B0B6223005D4275 /* temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp.swift; sourceTree = "<group>"; };
+		6D8CBA872B0B6573005D4275 /* SessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRequest.swift; sourceTree = "<group>"; };
+		6D8CBA892B0B67F1005D4275 /* LendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendingView.swift; sourceTree = "<group>"; };
+		6D8CBA8B2B0B6966005D4275 /* FinBoxWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxWebView.swift; sourceTree = "<group>"; };
+		6D8CBA8F2B0B6BB8005D4275 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		6D8CBA952B0B6EDE005D4275 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8CBA972B0B6EDE005D4275 /* SampleAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppApp.swift; sourceTree = "<group>"; };
+		6D8CBA992B0B6EDE005D4275 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6D8CBA9B2B0B6EE0005D4275 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6D8CBA9E2B0B6EE0005D4275 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D8CBA582B0A84B0005D4275 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8CBA622B0A84B0005D4275 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8CBA662B0A84B0005D4275 /* FinBoxLending.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8CBA922B0B6EDE005D4275 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D8CBA512B0A84B0005D4275 = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA772B0A85A1005D4275 /* Lending.podspec */,
+				6D8CBA762B0A854F005D4275 /* LICENSE */,
+				6D8CBA752B0A84EC005D4275 /* CHANGELOG.md */,
+				6D8CBA5D2B0A84B0005D4275 /* FinBoxLending */,
+				6D8CBA692B0A84B0005D4275 /* FinBoxLendingTests */,
+				6D8CBA962B0B6EDE005D4275 /* SampleApp */,
+				6D8CBA5C2B0A84B0005D4275 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6D8CBA5C2B0A84B0005D4275 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA5B2B0A84B0005D4275 /* FinBoxLending.framework */,
+				6D8CBA652B0A84B0005D4275 /* FinBoxLendingTests.xctest */,
+				6D8CBA952B0B6EDE005D4275 /* SampleApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D8CBA5D2B0A84B0005D4275 /* FinBoxLending */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA8E2B0B6B3F005D4275 /* web */,
+				6D8CBA8D2B0B6B34005D4275 /* utils */,
+				6D8CBA862B0B6565005D4275 /* models */,
+				6D8CBA812B0B4F76005D4275 /* viewmodels */,
+				6D8CBA802B0A8FDF005D4275 /* constants */,
+				6D8CBA7D2B0A8BE9005D4275 /* prefs */,
+				6D8CBA782B0A85FD005D4275 /* init */,
+				6D8CBA5E2B0A84B0005D4275 /* FinBoxLending.h */,
+				6D8CBA5F2B0A84B0005D4275 /* FinBoxLending.docc */,
+				6D8CBA842B0B6223005D4275 /* temp.swift */,
+				6D8CBA892B0B67F1005D4275 /* LendingView.swift */,
+			);
+			path = FinBoxLending;
+			sourceTree = "<group>";
+		};
+		6D8CBA692B0A84B0005D4275 /* FinBoxLendingTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA6A2B0A84B0005D4275 /* FinBoxLendingTests.swift */,
+			);
+			path = FinBoxLendingTests;
+			sourceTree = "<group>";
+		};
+		6D8CBA782B0A85FD005D4275 /* init */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA792B0A860A005D4275 /* FinBoxLending.swift */,
+			);
+			path = init;
+			sourceTree = "<group>";
+		};
+		6D8CBA7D2B0A8BE9005D4275 /* prefs */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA7B2B0A8BE0005D4275 /* FinBoxLendingPref.swift */,
+			);
+			path = prefs;
+			sourceTree = "<group>";
+		};
+		6D8CBA802B0A8FDF005D4275 /* constants */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA7E2B0A8CE5005D4275 /* Constants.swift */,
+			);
+			path = constants;
+			sourceTree = "<group>";
+		};
+		6D8CBA812B0B4F76005D4275 /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA822B0B4F88005D4275 /* SessionViewModel.swift */,
+			);
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		6D8CBA862B0B6565005D4275 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA872B0B6573005D4275 /* SessionRequest.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		6D8CBA8D2B0B6B34005D4275 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA8F2B0B6BB8005D4275 /* Utils.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		6D8CBA8E2B0B6B3F005D4275 /* web */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA8B2B0B6966005D4275 /* FinBoxWebView.swift */,
+			);
+			path = web;
+			sourceTree = "<group>";
+		};
+		6D8CBA962B0B6EDE005D4275 /* SampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA972B0B6EDE005D4275 /* SampleAppApp.swift */,
+				6D8CBA992B0B6EDE005D4275 /* ContentView.swift */,
+				6D8CBA9B2B0B6EE0005D4275 /* Assets.xcassets */,
+				6D8CBA9D2B0B6EE0005D4275 /* Preview Content */,
+			);
+			path = SampleApp;
+			sourceTree = "<group>";
+		};
+		6D8CBA9D2B0B6EE0005D4275 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBA9E2B0B6EE0005D4275 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6D8CBA562B0A84B0005D4275 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8CBA6C2B0A84B0005D4275 /* FinBoxLending.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6D8CBA5A2B0A84B0005D4275 /* FinBoxLending */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8CBA6F2B0A84B0005D4275 /* Build configuration list for PBXNativeTarget "FinBoxLending" */;
+			buildPhases = (
+				6D8CBA562B0A84B0005D4275 /* Headers */,
+				6D8CBA572B0A84B0005D4275 /* Sources */,
+				6D8CBA582B0A84B0005D4275 /* Frameworks */,
+				6D8CBA592B0A84B0005D4275 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FinBoxLending;
+			productName = FinBoxLending;
+			productReference = 6D8CBA5B2B0A84B0005D4275 /* FinBoxLending.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6D8CBA642B0A84B0005D4275 /* FinBoxLendingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8CBA722B0A84B0005D4275 /* Build configuration list for PBXNativeTarget "FinBoxLendingTests" */;
+			buildPhases = (
+				6D8CBA612B0A84B0005D4275 /* Sources */,
+				6D8CBA622B0A84B0005D4275 /* Frameworks */,
+				6D8CBA632B0A84B0005D4275 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D8CBA682B0A84B0005D4275 /* PBXTargetDependency */,
+			);
+			name = FinBoxLendingTests;
+			productName = FinBoxLendingTests;
+			productReference = 6D8CBA652B0A84B0005D4275 /* FinBoxLendingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6D8CBA942B0B6EDE005D4275 /* SampleApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8CBAA02B0B6EE0005D4275 /* Build configuration list for PBXNativeTarget "SampleApp" */;
+			buildPhases = (
+				6D8CBA912B0B6EDE005D4275 /* Sources */,
+				6D8CBA922B0B6EDE005D4275 /* Frameworks */,
+				6D8CBA932B0B6EDE005D4275 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SampleApp;
+			productName = SampleApp;
+			productReference = 6D8CBA952B0B6EDE005D4275 /* SampleApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D8CBA522B0A84B0005D4275 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					6D8CBA5A2B0A84B0005D4275 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					6D8CBA642B0A84B0005D4275 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					6D8CBA942B0B6EDE005D4275 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 6D8CBA552B0A84B0005D4275 /* Build configuration list for PBXProject "FinBoxLending" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6D8CBA512B0A84B0005D4275;
+			productRefGroup = 6D8CBA5C2B0A84B0005D4275 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D8CBA5A2B0A84B0005D4275 /* FinBoxLending */,
+				6D8CBA642B0A84B0005D4275 /* FinBoxLendingTests */,
+				6D8CBA942B0B6EDE005D4275 /* SampleApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D8CBA592B0A84B0005D4275 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8CBA632B0A84B0005D4275 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8CBA932B0B6EDE005D4275 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8CBA9F2B0B6EE0005D4275 /* Preview Assets.xcassets in Resources */,
+				6D8CBA9C2B0B6EE0005D4275 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D8CBA572B0A84B0005D4275 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8CBA8A2B0B67F1005D4275 /* LendingView.swift in Sources */,
+				6D8CBA602B0A84B0005D4275 /* FinBoxLending.docc in Sources */,
+				6D8CBA882B0B6573005D4275 /* SessionRequest.swift in Sources */,
+				6D8CBA832B0B4F88005D4275 /* SessionViewModel.swift in Sources */,
+				6D8CBA7A2B0A860A005D4275 /* FinBoxLending.swift in Sources */,
+				6D8CBA902B0B6BB8005D4275 /* Utils.swift in Sources */,
+				6D8CBA8C2B0B6966005D4275 /* FinBoxWebView.swift in Sources */,
+				6D8CBA7C2B0A8BE0005D4275 /* FinBoxLendingPref.swift in Sources */,
+				6D8CBA7F2B0A8CE5005D4275 /* Constants.swift in Sources */,
+				6D8CBA852B0B6223005D4275 /* temp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8CBA612B0A84B0005D4275 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8CBA6B2B0A84B0005D4275 /* FinBoxLendingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8CBA912B0B6EDE005D4275 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8CBA9A2B0B6EDE005D4275 /* ContentView.swift in Sources */,
+				6D8CBA982B0B6EDE005D4275 /* SampleAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D8CBA682B0A84B0005D4275 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D8CBA5A2B0A84B0005D4275 /* FinBoxLending */;
+			targetProxy = 6D8CBA672B0A84B0005D4275 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6D8CBA6D2B0A84B0005D4275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6D8CBA6E2B0A84B0005D4275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6D8CBA702B0A84B0005D4275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = in.finbox.FinBoxLending;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6D8CBA712B0A84B0005D4275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = in.finbox.FinBoxLending;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6D8CBA732B0A84B0005D4275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = in.finbox.FinBoxLendingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6D8CBA742B0A84B0005D4275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = in.finbox.FinBoxLendingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6D8CBAA12B0B6EE0005D4275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = in.finbox.SampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6D8CBAA22B0B6EE0005D4275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = in.finbox.SampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D8CBA552B0A84B0005D4275 /* Build configuration list for PBXProject "FinBoxLending" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8CBA6D2B0A84B0005D4275 /* Debug */,
+				6D8CBA6E2B0A84B0005D4275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D8CBA6F2B0A84B0005D4275 /* Build configuration list for PBXNativeTarget "FinBoxLending" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8CBA702B0A84B0005D4275 /* Debug */,
+				6D8CBA712B0A84B0005D4275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D8CBA722B0A84B0005D4275 /* Build configuration list for PBXNativeTarget "FinBoxLendingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8CBA732B0A84B0005D4275 /* Debug */,
+				6D8CBA742B0A84B0005D4275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D8CBAA02B0B6EE0005D4275 /* Build configuration list for PBXNativeTarget "SampleApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8CBAA12B0B6EE0005D4275 /* Debug */,
+				6D8CBAA22B0B6EE0005D4275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D8CBA522B0A84B0005D4275 /* Project object */;
+}
