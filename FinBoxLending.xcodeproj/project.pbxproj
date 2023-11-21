@@ -24,6 +24,11 @@
 		6D8CBA9A2B0B6EDE005D4275 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA992B0B6EDE005D4275 /* ContentView.swift */; };
 		6D8CBA9C2B0B6EE0005D4275 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8CBA9B2B0B6EE0005D4275 /* Assets.xcassets */; };
 		6D8CBA9F2B0B6EE0005D4275 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8CBA9E2B0B6EE0005D4275 /* Preview Assets.xcassets */; };
+		6D8CBAA52B0BCB99005D4275 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBAA42B0BCB99005D4275 /* APIService.swift */; };
+		6D8CBAA72B0CB538005D4275 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBAA62B0CB538005D4275 /* SessionResponse.swift */; };
+		6D8CBAA92B0CB5DA005D4275 /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBAA82B0CB5DA005D4275 /* SessionData.swift */; };
+		6D8CBABD2B0CDB0D005D4275 /* FinBoxLending.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8CBA5B2B0A84B0005D4275 /* FinBoxLending.framework */; };
+		6D8CBABE2B0CDB0D005D4275 /* FinBoxLending.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8CBA5B2B0A84B0005D4275 /* FinBoxLending.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +39,28 @@
 			remoteGlobalIDString = 6D8CBA5A2B0A84B0005D4275;
 			remoteInfo = FinBoxLending;
 		};
+		6D8CBABF2B0CDB0D005D4275 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D8CBA522B0A84B0005D4275 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D8CBA5A2B0A84B0005D4275;
+			remoteInfo = FinBoxLending;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6D8CBAC12B0CDB0D005D4275 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6D8CBABE2B0CDB0D005D4275 /* FinBoxLending.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6D8CBA5B2B0A84B0005D4275 /* FinBoxLending.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FinBoxLending.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +85,9 @@
 		6D8CBA992B0B6EDE005D4275 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6D8CBA9B2B0B6EE0005D4275 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D8CBA9E2B0B6EE0005D4275 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6D8CBAA42B0BCB99005D4275 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		6D8CBAA62B0CB538005D4275 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
+		6D8CBAA82B0CB5DA005D4275 /* SessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D8CBABD2B0CDB0D005D4275 /* FinBoxLending.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +127,7 @@
 				6D8CBA692B0A84B0005D4275 /* FinBoxLendingTests */,
 				6D8CBA962B0B6EDE005D4275 /* SampleApp */,
 				6D8CBA5C2B0A84B0005D4275 /* Products */,
+				6D8CBABC2B0CDB0D005D4275 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +144,7 @@
 		6D8CBA5D2B0A84B0005D4275 /* FinBoxLending */ = {
 			isa = PBXGroup;
 			children = (
+				6D8CBAA32B0BCB86005D4275 /* network */,
 				6D8CBA8E2B0B6B3F005D4275 /* web */,
 				6D8CBA8D2B0B6B34005D4275 /* utils */,
 				6D8CBA862B0B6565005D4275 /* models */,
@@ -172,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				6D8CBA872B0B6573005D4275 /* SessionRequest.swift */,
+				6D8CBAA62B0CB538005D4275 /* SessionResponse.swift */,
+				6D8CBAA82B0CB5DA005D4275 /* SessionData.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -209,6 +243,21 @@
 				6D8CBA9E2B0B6EE0005D4275 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6D8CBAA32B0BCB86005D4275 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CBAA42B0BCB99005D4275 /* APIService.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		6D8CBABC2B0CDB0D005D4275 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,10 +317,12 @@
 				6D8CBA912B0B6EDE005D4275 /* Sources */,
 				6D8CBA922B0B6EDE005D4275 /* Frameworks */,
 				6D8CBA932B0B6EDE005D4275 /* Resources */,
+				6D8CBAC12B0CDB0D005D4275 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6D8CBAC02B0CDB0D005D4275 /* PBXTargetDependency */,
 			);
 			name = SampleApp;
 			productName = SampleApp;
@@ -353,11 +404,14 @@
 				6D8CBA8A2B0B67F1005D4275 /* LendingView.swift in Sources */,
 				6D8CBA602B0A84B0005D4275 /* FinBoxLending.docc in Sources */,
 				6D8CBA882B0B6573005D4275 /* SessionRequest.swift in Sources */,
+				6D8CBAA72B0CB538005D4275 /* SessionResponse.swift in Sources */,
 				6D8CBA832B0B4F88005D4275 /* SessionViewModel.swift in Sources */,
+				6D8CBAA52B0BCB99005D4275 /* APIService.swift in Sources */,
 				6D8CBA7A2B0A860A005D4275 /* FinBoxLending.swift in Sources */,
 				6D8CBA902B0B6BB8005D4275 /* Utils.swift in Sources */,
 				6D8CBA8C2B0B6966005D4275 /* FinBoxWebView.swift in Sources */,
 				6D8CBA7C2B0A8BE0005D4275 /* FinBoxLendingPref.swift in Sources */,
+				6D8CBAA92B0CB5DA005D4275 /* SessionData.swift in Sources */,
 				6D8CBA7F2B0A8CE5005D4275 /* Constants.swift in Sources */,
 				6D8CBA852B0B6223005D4275 /* temp.swift in Sources */,
 			);
@@ -387,6 +441,11 @@
 			isa = PBXTargetDependency;
 			target = 6D8CBA5A2B0A84B0005D4275 /* FinBoxLending */;
 			targetProxy = 6D8CBA672B0A84B0005D4275 /* PBXContainerItemProxy */;
+		};
+		6D8CBAC02B0CDB0D005D4275 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D8CBA5A2B0A84B0005D4275 /* FinBoxLending */;
+			targetProxy = 6D8CBABF2B0CDB0D005D4275 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -621,6 +680,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)/**";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -649,6 +709,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)/**";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
