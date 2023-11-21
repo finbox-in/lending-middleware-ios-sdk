@@ -99,7 +99,6 @@ public class FinBoxLending {
             let hidePB = self.hidePoweredBy ?? false
             let dcEnabled = self.dcEnabled ?? false
             
-            // TODO: Check what should be the default boolean values
             savePreferences(customerID: id, apiKey: key, userToken: token, environment: env, creditLineAmount: cLineAmt, creditLineTransactionID: cLineTranxID, showToolBar: showTB, hidePoweredBy: hidePB, dcEnabled: dcEnabled)
             
             return FinBoxLending(customerID: id, apiKey: key, userToken: token, environment: env, creditLineAmount: cLineAmt, creditLineTransactionID: cLineTranxID, showToolBar: showTB, hidePoweredBy: hidePB, dcEnabled: dcEnabled)
