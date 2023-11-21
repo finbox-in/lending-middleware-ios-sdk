@@ -10,7 +10,7 @@ import Foundation
 class SessionViewModel: ObservableObject {
     
     let baseURL = "https://lendinguat.finbox.in"
-    let sessionEndpoint = "/v1/user/session"
+    let sessionEndpoint = "/v1/user/clientSession"
     
     @Published var sessionURL: String?
     
