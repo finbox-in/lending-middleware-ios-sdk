@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct SessionResponse: Codable {
+    let data: SessionData?
+    let error: String?
+    let status: Bool?
+}
