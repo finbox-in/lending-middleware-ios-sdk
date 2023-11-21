@@ -9,7 +9,7 @@ import Foundation
 
 public class FinBoxLending {
     
-    private init(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: String, creditLineTransactionID: String, showToolBar: Bool, hidePoweredBy: Bool) {
+    private init(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: String, creditLineTransactionID: String, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
         
     }
     
@@ -28,6 +28,7 @@ public class FinBoxLending {
 //        private var toolBarConfig: CheckThisOut?
         private var showToolBar: Bool?
         private var hidePoweredBy: Bool?
+        private var dcEnabled: Bool?
     
         public func customerID(id: String) -> Builder {
             self.customerID = id
@@ -69,6 +70,11 @@ public class FinBoxLending {
             return self
         }
         
+        public func dcEnabled(enabled: Bool) -> Builder {
+            self.dcEnabled = enabled
+            return self
+        }
+        
         public func build() -> FinBoxLending {
             guard let key = self.apiKey else {
                 fatalError("API Key cannot be null")
@@ -83,28 +89,23 @@ public class FinBoxLending {
             }
             
             guard let env = self.environment else {
-                fatalError("Environemtn cannot be null")
+                fatalError("Environment cannot be null")
             }
             
-            guard let cLineAmt = self.creditLineAmount else {
-                fatalError("Credit Line Amount cannot be null")
-            }
-            
-            guard let cLineTranxID = self.creditLineTransactionID else {
-                fatalError("Credit Line Transaction ID cannot be null")
-            }
-            
+            // Setting default on null values
+            let cLineAmt = self.creditLineAmount ?? "0.0"
+            let cLineTranxID = self.creditLineTransactionID ?? ""
             let showTB = self.showToolBar ?? false
-            
             let hidePB = self.hidePoweredBy ?? false
+            let dcEnabled = self.dcEnabled ?? false
             
             // TODO: Check what should be the default boolean values
-            savePreferences(customerID: id, apiKey: key, userToken: token, environment: env, creditLineAmount: cLineAmt, creditLineTransactionID: cLineTranxID, showToolBar: showTB, hidePoweredBy: hidePB)
+            savePreferences(customerID: id, apiKey: key, userToken: token, environment: env, creditLineAmount: cLineAmt, creditLineTransactionID: cLineTranxID, showToolBar: showTB, hidePoweredBy: hidePB, dcEnabled: dcEnabled)
             
-            return FinBoxLending(customerID: id, apiKey: key, userToken: token, environment: env, creditLineAmount: cLineAmt, creditLineTransactionID: cLineTranxID, showToolBar: showTB, hidePoweredBy: hidePB)
+            return FinBoxLending(customerID: id, apiKey: key, userToken: token, environment: env, creditLineAmount: cLineAmt, creditLineTransactionID: cLineTranxID, showToolBar: showTB, hidePoweredBy: hidePB, dcEnabled: dcEnabled)
         }
         
-        public func savePreferences(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: String, creditLineTransactionID: String, showToolBar: Bool, hidePoweredBy: Bool) {
+        public func savePreferences(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: String, creditLineTransactionID: String, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
             let userPrefs = FinBoxLendingPref()
             
             userPrefs.apiKey = apiKey
