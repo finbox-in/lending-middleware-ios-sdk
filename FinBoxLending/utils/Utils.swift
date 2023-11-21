@@ -13,9 +13,24 @@ struct Utils {
         return URLRequest(url: URL(string: urlString)!)
     }
     
-    // TODO: Add impl
-//    static func postRequest(urlString: String, body: Data) -> URLRequest {
-//
-//    }
+    static func postRequest(urlString: String, body: Data) -> URLRequest? {
+        var urlRequest = URLRequest(url: URL(string: urlString)!)
+        
+        let userPref = FinBoxLendingPref()
+        
+        guard let apiKey = userPref.apiKey else {
+            debugPrint("getSessionRequest: API key null")
+            return nil
+        }
+        
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue(apiKey, forHTTPHeaderField: "x-api-key")
+        
+        urlRequest.httpMethod = "POST"
+        
+        urlRequest.httpBody = body
+        
+        return urlRequest
+    }
     
 }
