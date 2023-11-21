@@ -17,6 +17,7 @@ class FinBoxLendingPref {
             return userDefaults.object(forKey: Constants.FINBOX_LENDING_API_KEY) as? String ?? nil
         }
         set {
+            debugPrint("API Key for userdefaults: \(newValue)")
             userDefaults.set(newValue, forKey: Constants.FINBOX_LENDING_API_KEY)
         }
     }
