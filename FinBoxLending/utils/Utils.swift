@@ -23,8 +23,14 @@ struct Utils {
             return nil
         }
         
+        guard let token = userPref.userToken else {
+            debugPrint("Token key null")
+            return nil
+        }
+        
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.addValue(apiKey, forHTTPHeaderField: "x-api-key")
+        urlRequest.addValue(token, forHTTPHeaderField: "token")
         
         urlRequest.httpMethod = "POST"
         
