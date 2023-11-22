@@ -9,7 +9,7 @@ import Foundation
 
 public class FinBoxLending {
     
-    private init(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: String?, creditLineTransactionID: String?, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
+    private init(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: Float?, creditLineTransactionID: String?, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
         
     }
     
@@ -23,7 +23,7 @@ public class FinBoxLending {
         private var apiKey: String?
         private var userToken: String?
         private var environment: String?
-        private var creditLineAmount: String?
+        private var creditLineAmount: Float?
         private var creditLineTransactionID: String?
         // TODO: Add toolbar config
 //        private var toolBarConfig: CheckThisOut?
@@ -51,7 +51,7 @@ public class FinBoxLending {
             return self
         }
         
-        public func creditLineAmount(amount: String) -> Builder {
+        public func creditLineAmount(amount: Float) -> Builder {
             self.creditLineAmount = amount
             return self
         }
@@ -105,7 +105,7 @@ public class FinBoxLending {
             return FinBoxLending(customerID: id, apiKey: key, userToken: token, environment: env, creditLineAmount: cLineAmt, creditLineTransactionID: cLineTranxID, showToolBar: showTB, hidePoweredBy: hidePB, dcEnabled: dcEnabled)
         }
         
-        public func savePreferences(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: String?, creditLineTransactionID: String?, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
+        public func savePreferences(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: Float?, creditLineTransactionID: String?, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
             let userPrefs = FinBoxLendingPref()
             
             userPrefs.apiKey = apiKey
