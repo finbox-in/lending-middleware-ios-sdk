@@ -9,7 +9,7 @@ import Foundation
 
 public class FinBoxLending {
     
-    private init(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: String, creditLineTransactionID: String, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
+    private init(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: String?, creditLineTransactionID: String?, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
         
     }
     
@@ -25,6 +25,7 @@ public class FinBoxLending {
         private var environment: String?
         private var creditLineAmount: String?
         private var creditLineTransactionID: String?
+        // TODO: Add toolbar config
 //        private var toolBarConfig: CheckThisOut?
         private var showToolBar: Bool?
         private var hidePoweredBy: Bool?
@@ -93,8 +94,8 @@ public class FinBoxLending {
             }
             
             // Setting default on null values
-            let cLineAmt = self.creditLineAmount ?? "0.0"
-            let cLineTranxID = self.creditLineTransactionID ?? ""
+            let cLineAmt = self.creditLineAmount
+            let cLineTranxID = self.creditLineTransactionID
             let showTB = self.showToolBar ?? false
             let hidePB = self.hidePoweredBy ?? false
             let dcEnabled = self.dcEnabled ?? false
@@ -104,7 +105,7 @@ public class FinBoxLending {
             return FinBoxLending(customerID: id, apiKey: key, userToken: token, environment: env, creditLineAmount: cLineAmt, creditLineTransactionID: cLineTranxID, showToolBar: showTB, hidePoweredBy: hidePB, dcEnabled: dcEnabled)
         }
         
-        public func savePreferences(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: String, creditLineTransactionID: String, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
+        public func savePreferences(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: String?, creditLineTransactionID: String?, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
             let userPrefs = FinBoxLendingPref()
             
             userPrefs.apiKey = apiKey

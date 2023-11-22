@@ -8,6 +8,7 @@
 import Foundation
 
 struct Constants {
+    // User default keys set during initialization
     static var FINBOX_LENDING_CUSTOMER_ID = "finbox_lending_customer_id"
     static var FINBOX_LENDING_API_KEY = "finbox_lending_api_key"
     static var FINBOX_LENDING_USER_TOKEN = "finbox_lending_user_token"
