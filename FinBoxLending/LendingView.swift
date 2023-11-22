@@ -12,13 +12,24 @@ public struct LendingView: View {
     @ObservedObject var viewModel = SessionViewModel()
     
     public init() {
-        
+        debugPrint("Lending Started")
     }
     
     public var body: some View {
         VStack {
-            FinBoxWebView(urlString: "https://lendingwebuat.finbox.in/session/985573d3-b5c8-4442-9810-ab249f669b43?hidePoweredBy=false")
+            if (viewModel.sessionUrl != nil) {
+                // Load the webpage
+                FinBoxWebView(urlString: viewModel.sessionUrl)
+            } else {
+                if #available(iOS 14, *) {
+                    // Show progress
+                    ProgressView()
+                } else {
+                    // Progress View is not available
+                }
+            }
         }.onAppear(perform: {
+            debugPrint("Lending View Appeared")
             viewModel.fetchSession()
         })
     }
