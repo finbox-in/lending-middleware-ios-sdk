@@ -13,8 +13,18 @@ struct FinBoxWebView: UIViewRepresentable {
     
     let urlString: String?
     
+    // Result Function
+    public let lendingResult : ((FinBoxJourneyResult) -> Void)
+    
     func makeUIView(context: Context) -> WKWebView {
-        let webView = WKWebView()
+        // Create a configuration
+        let config = WKWebViewConfiguration()
+        // Create a user controller
+        config.userContentController = WKUserContentController()
+        // Set user controller
+        config.userContentController.add(FinBoxWebViewHandler(lendingResult: self.lendingResult), name: "FinboxIosWebViewInterface")
+        
+        let webView = WKWebView(frame: .zero, configuration: config)
         return webView
     }
     
@@ -30,6 +40,8 @@ struct FinBoxWebView: UIViewRepresentable {
 
 struct FinBoxWebView_Previews: PreviewProvider {
     static var previews: some View {
-        FinBoxWebView(urlString: "https://lendingwebuat.finbox.in/session/ea5dcb68-15e4-42af-b69b-e35971dc7857?hidePoweredBy=false")
+        FinBoxWebView(urlString: "https://lendingwebuat.finbox.in/session/ea5dcb68-15e4-42af-b69b-e35971dc7857?hidePoweredBy=false") {
+            _ in
+        }
     }
 }
