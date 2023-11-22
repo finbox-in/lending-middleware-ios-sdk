@@ -15,7 +15,6 @@
 		6D8CBA7C2B0A8BE0005D4275 /* FinBoxLendingPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA7B2B0A8BE0005D4275 /* FinBoxLendingPref.swift */; };
 		6D8CBA7F2B0A8CE5005D4275 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA7E2B0A8CE5005D4275 /* Constants.swift */; };
 		6D8CBA832B0B4F88005D4275 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA822B0B4F88005D4275 /* SessionViewModel.swift */; };
-		6D8CBA852B0B6223005D4275 /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA842B0B6223005D4275 /* temp.swift */; };
 		6D8CBA882B0B6573005D4275 /* SessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA872B0B6573005D4275 /* SessionRequest.swift */; };
 		6D8CBA8A2B0B67F1005D4275 /* LendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA892B0B67F1005D4275 /* LendingView.swift */; };
 		6D8CBA8C2B0B6966005D4275 /* FinBoxWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA8B2B0B6966005D4275 /* FinBoxWebView.swift */; };
@@ -75,7 +74,6 @@
 		6D8CBA7B2B0A8BE0005D4275 /* FinBoxLendingPref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxLendingPref.swift; sourceTree = "<group>"; };
 		6D8CBA7E2B0A8CE5005D4275 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6D8CBA822B0B4F88005D4275 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
-		6D8CBA842B0B6223005D4275 /* temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp.swift; sourceTree = "<group>"; };
 		6D8CBA872B0B6573005D4275 /* SessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRequest.swift; sourceTree = "<group>"; };
 		6D8CBA892B0B67F1005D4275 /* LendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendingView.swift; sourceTree = "<group>"; };
 		6D8CBA8B2B0B6966005D4275 /* FinBoxWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxWebView.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 				6D8CBA782B0A85FD005D4275 /* init */,
 				6D8CBA5E2B0A84B0005D4275 /* FinBoxLending.h */,
 				6D8CBA5F2B0A84B0005D4275 /* FinBoxLending.docc */,
-				6D8CBA842B0B6223005D4275 /* temp.swift */,
 				6D8CBA892B0B67F1005D4275 /* LendingView.swift */,
 			);
 			path = FinBoxLending;
@@ -413,7 +410,6 @@
 				6D8CBA7C2B0A8BE0005D4275 /* FinBoxLendingPref.swift in Sources */,
 				6D8CBAA92B0CB5DA005D4275 /* SessionData.swift in Sources */,
 				6D8CBA7F2B0A8CE5005D4275 /* Constants.swift in Sources */,
-				6D8CBA852B0B6223005D4275 /* temp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
