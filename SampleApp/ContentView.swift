@@ -39,7 +39,10 @@ struct ContentView: View {
             .environment(env: "UAT")
             .build()
         
-        return LendingView().navigationBarHidden(true)
+        return LendingView() {
+            payload in
+            debugPrint("Status Code", payload.code ?? "Status Code is empty")
+        }.navigationBarHidden(true)
     }
 }
 

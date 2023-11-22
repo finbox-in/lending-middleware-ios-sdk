@@ -11,15 +11,18 @@ public struct LendingView: View {
     
     @ObservedObject var viewModel = SessionViewModel()
     
-    public init() {
-        
+    // Result Function
+    public let lendingResult : ((FinBoxJourneyResult) -> Void)
+    
+    public init(lendingResult: @escaping (FinBoxJourneyResult) -> Void) {
+        self.lendingResult = lendingResult
     }
     
     public var body: some View {
         VStack {
             if (viewModel.sessionUrl != nil) {
                 // Load the webpage
-                FinBoxWebView(urlString: viewModel.sessionUrl)
+                FinBoxWebView(urlString: viewModel.sessionUrl, lendingResult: lendingResult)
             } else {
                 if #available(iOS 14, *) {
                     // Show progress
@@ -43,6 +46,9 @@ struct LendingView_Previews: PreviewProvider {
             .userToken(token: "AuxlyTKMxkIylsMmEoeoNCocevmkMPvjZlssbSEFKDNZmbcjhAvXDoMWWjtyDUFI")
             .environment(env: "UAT")
             .build()
-        LendingView()
+        LendingView() {
+            payload in
+            debugPrint("Status Code", payload.code ?? "Status Code is empty")
+        }
     }
 }
