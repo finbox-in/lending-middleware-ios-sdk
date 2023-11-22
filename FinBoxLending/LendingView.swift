@@ -12,7 +12,7 @@ public struct LendingView: View {
     @ObservedObject var viewModel = SessionViewModel()
     
     public init() {
-        debugPrint("Lending Started")
+        
     }
     
     public var body: some View {
@@ -29,20 +29,20 @@ public struct LendingView: View {
                 }
             }
         }.onAppear(perform: {
-            debugPrint("Lending View Appeared")
             viewModel.fetchSession()
         })
     }
-    
-    struct LendingView_Previews: PreviewProvider {
-        static var previews: some View {
-            let _ = FinBoxLending.Builder()
-                .apiKey(key: "iUJT1sxksi5ipCye69OTf3b8FCsQlYgl9J6SXRFY")
-                .customerID(id: "Nexarc_test_user_119109239944")
-                .userToken(token: "AuxlyTKMxkIylsMmEoeoNCocevmkMPvjZlssbSEFKDNZmbcjhAvXDoMWWjtyDUFI")
-                .environment(env: "UAT")
-                .build()
-            LendingView()
-        }
+
+}
+
+struct LendingView_Previews: PreviewProvider {
+    static var previews: some View {
+        let _ = FinBoxLending.Builder()
+            .apiKey(key: "iUJT1sxksi5ipCye69OTf3b8FCsQlYgl9J6SXRFY")
+            .customerID(id: "Nexarc_test_user_119109239944")
+            .userToken(token: "AuxlyTKMxkIylsMmEoeoNCocevmkMPvjZlssbSEFKDNZmbcjhAvXDoMWWjtyDUFI")
+            .environment(env: "UAT")
+            .build()
+        LendingView()
     }
 }
