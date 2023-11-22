@@ -14,7 +14,12 @@ struct Utils {
     }
     
     static func postRequest(urlString: String, body: Data) -> URLRequest? {
-        var urlRequest = URLRequest(url: URL(string: urlString)!)
+        guard let url = URL(string: urlString) else {
+            debugPrint("Convert to URL object is null")
+            return nil
+        }
+        
+        var urlRequest = URLRequest(url: url)
         
         let userPref = FinBoxLendingPref()
         

@@ -43,7 +43,7 @@ struct APIService {
                 if (200...299).contains(httpResponse.statusCode) {
                     if let data = data {
                         // Handle the response data here
-                        print("Response: \(String(data: data, encoding: .utf8) ?? "")")
+                        print("Response: \(String(data: data, encoding: .utf8) as String?)")
                     }
                 } else {
                     print("HTTP Response Code: \(httpResponse.statusCode)")

@@ -57,7 +57,7 @@ class SessionViewModel: ObservableObject {
             do {
                 let sessionResponse: SessionResponse = try
                 JSONDecoder().decode(SessionResponse.self, from: data)
-                debugPrint("Session Response URL: \(sessionResponse.data?.url ?? "")")
+                debugPrint("Session Response URL: \(sessionResponse.data?.url as String?)")
                 
                 DispatchQueue.main.async {
                     self.sessionUrl = sessionResponse.data?.url
