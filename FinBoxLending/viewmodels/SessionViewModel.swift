@@ -14,12 +14,11 @@ class SessionViewModel: ObservableObject {
     
     @Published var sessionUrl: String?
     
+    func getUrlString() -> String {
+        return baseURL + sessionEndpoint
+    }
+    
     func fetchSession() {
-        debugPrint("Fetching Session...")
-        
-        let urlString = baseURL + sessionEndpoint
-        
-        debugPrint("URLString: \(urlString)")
         
         // Get request body
         let requestBody = self.getRequestBody()
@@ -31,7 +30,7 @@ class SessionViewModel: ObservableObject {
         }
         
         // Make the api call
-        let requestParams = Utils.postRequest(urlString: urlString, body: sessionBody)
+        let requestParams = Utils.postRequest(urlString: getUrlString(), body: sessionBody)
         
         guard let requestParams = requestParams else {
             debugPrint("Request Params null")
@@ -73,7 +72,6 @@ class SessionViewModel: ObservableObject {
     }
     
     func getRequestBody() -> Data? {
-        debugPrint("Getting RequestBody")
         let sessionRequest = getSessionRequest()
         
         guard let sessionReq = sessionRequest else {
@@ -88,23 +86,19 @@ class SessionViewModel: ObservableObject {
     }
     
     func getSessionRequest() -> SessionRequest? {
-        debugPrint("Getting SessionRequest")
         let userPref = FinBoxLendingPref()
         
         guard let customerID = userPref.customerID else {
             debugPrint("getSessionRequest: Customer ID null")
             return nil
         }
-        
-        // TODO: Find a better way
-        // Tried using CFBundleShortVersionString, seems it can be used only in apps. Need to check.
-//        let sdkVersion = "1.0.0"
-//        
-//        let creditLineAmount = Float(userPref.creditLineAmount ?? "0.0")
-        
-        let redirectURL = "https://some.random.website.com"
-        
-        return SessionRequest(customerID: customerID, redirectURL: redirectURL)
+
+        // TODO: Read sdk version number from pod file
+        // Create a session object
+        return SessionRequest(customerID: customerID, withdrawAmount: userPref.creditLineAmount,
+                              redirectURL: nil, transactionID: userPref.creditLineTransactionID, source: nil,
+                              hideClose: false, hidefaq: true, hideback: false, hideNav: true,
+                              hidePoweredBy: userPref.hidePoweredBy, sdkType: "hybrid:ios:0.0.1")
     }
     
     func handleClientError(error: Any) {
