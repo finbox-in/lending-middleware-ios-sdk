@@ -22,7 +22,7 @@ struct FinBoxWebView: UIViewRepresentable {
         // Create a user controller
         config.userContentController = WKUserContentController()
         // Set user controller
-        config.userContentController.add(FinBoxWebViewHandler(lendingResult: self.lendingResult), name: "FinboxIosWebViewInterface")
+        config.userContentController.add(FinBoxWebViewHandler(lendingResult: self.lendingResult), name: "FinBoxIosWebViewInterface")
         
         let webView = WKWebView(frame: .zero, configuration: config)
         return webView
