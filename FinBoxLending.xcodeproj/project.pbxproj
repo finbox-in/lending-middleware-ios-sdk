@@ -62,6 +62,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3729CB4C2B0DECDB00E0D9C8 /* FinBoxLending.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FinBoxLending.podspec; sourceTree = "<group>"; };
 		6D8CBA5B2B0A84B0005D4275 /* FinBoxLending.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FinBoxLending.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8CBA5E2B0A84B0005D4275 /* FinBoxLending.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinBoxLending.h; sourceTree = "<group>"; };
 		6D8CBA5F2B0A84B0005D4275 /* FinBoxLending.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FinBoxLending.docc; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		6D8CBA6A2B0A84B0005D4275 /* FinBoxLendingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxLendingTests.swift; sourceTree = "<group>"; };
 		6D8CBA752B0A84EC005D4275 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		6D8CBA762B0A854F005D4275 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		6D8CBA772B0A85A1005D4275 /* Lending.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Lending.podspec; sourceTree = "<group>"; };
 		6D8CBA792B0A860A005D4275 /* FinBoxLending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxLending.swift; sourceTree = "<group>"; };
 		6D8CBA7B2B0A8BE0005D4275 /* FinBoxLendingPref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxLendingPref.swift; sourceTree = "<group>"; };
 		6D8CBA7E2B0A8CE5005D4275 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		6D8CBA512B0A84B0005D4275 = {
 			isa = PBXGroup;
 			children = (
-				6D8CBA772B0A85A1005D4275 /* Lending.podspec */,
+				3729CB4C2B0DECDB00E0D9C8 /* FinBoxLending.podspec */,
 				6D8CBA762B0A854F005D4275 /* LICENSE */,
 				6D8CBA752B0A84EC005D4275 /* CHANGELOG.md */,
 				6D8CBA5D2B0A84B0005D4275 /* FinBoxLending */,
