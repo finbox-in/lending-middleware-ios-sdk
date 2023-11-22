@@ -56,9 +56,9 @@ class SessionViewModel: ObservableObject {
             
             do {
                 let sessionResponse: SessionResponse = try
-                    JSONDecoder().decode(SessionResponse.self, from: data)
+                JSONDecoder().decode(SessionResponse.self, from: data)
                 debugPrint("Session Response URL: \(sessionResponse.data?.url ?? "")")
-                    
+                
                 DispatchQueue.main.async {
                     self.sessionUrl = sessionResponse.data?.url
                 }
@@ -92,7 +92,7 @@ class SessionViewModel: ObservableObject {
             debugPrint("getSessionRequest: Customer ID null")
             return nil
         }
-
+        
         // TODO: Read sdk version number from pod file
         // Create a session object
         return SessionRequest(customerID: customerID, withdrawAmount: userPref.creditLineAmount,
