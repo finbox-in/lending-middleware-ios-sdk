@@ -1,13 +1,40 @@
-# ``FinBoxLending``
+FinBox Lending IOS SDK
+======================
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+Lending IOS SDK enables the user to complete the end to end lending journey.
 
-## Overview
 
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+## Add Lending SDK
 
-## Topics
+Add the library to Pod file
 
-### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
+```
+pod 'FinBoxLending'
+```
 
-- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
+
+## Build FinBoxLending
+
+Build FinBoxLending with API Key, Customer Id and other details
+
+```
+let _ = FinBoxLending.Builder()
+    .environment(env: "UAT") // UAT or PROD
+    .apiKey(key: apiKey)
+    .customerID(id: customerID)
+    .userToken(token: apiKey)
+    .build();
+```
+
+
+## Show Lending Screen
+
+Show the Lending Screen
+
+```
+LendingView() {
+    payload in
+    // Success or Failed journey based on the result code
+    debugPrint("Result Code", payload.code)
+}
+```

@@ -48,9 +48,9 @@ class FinBoxLendingPref {
         }
     }
     
-    var creditLineAmount: String? {
+    var creditLineAmount: Float? {
         get {
-            return userDefaults.object(forKey: Constants.FINBOX_LENDING_CREDIT_LINE_AMOUNT) as? String ?? nil
+            return userDefaults.object(forKey: Constants.FINBOX_LENDING_CREDIT_LINE_AMOUNT) as? Float ?? 0.0
         }
         set {
             userDefaults.set(newValue, forKey: Constants.FINBOX_LENDING_CREDIT_LINE_AMOUNT)

@@ -9,19 +9,46 @@ import SwiftUI
 
 public struct LendingView: View {
     
-    public init() {
-        
+    @ObservedObject var viewModel = SessionViewModel()
+    
+    // Result Function
+    public let lendingResult : ((FinBoxJourneyResult) -> Void)
+    
+    public init(lendingResult: @escaping (FinBoxJourneyResult) -> Void) {
+        self.lendingResult = lendingResult
     }
     
     public var body: some View {
         VStack {
-            FinBoxWebView(urlString: "https://lendingwebuat.finbox.in/session/ea5dcb68-15e4-42af-b69b-e35971dc7857?hidePoweredBy=false")
-        }
+            if (viewModel.sessionUrl != nil) {
+                // Load the webpage
+                FinBoxWebView(urlString: viewModel.sessionUrl, lendingResult: lendingResult)
+            } else {
+                if #available(iOS 14, *) {
+                    // Show progress
+                    ProgressView()
+                } else {
+                    // Progress View is not available
+                }
+            }
+        }.onAppear(perform: {
+            viewModel.fetchSession()
+        })
     }
-    
-    struct LendingView_Previews: PreviewProvider {
-        static var previews: some View {
-            LendingView()
+
+}
+
+struct LendingView_Previews: PreviewProvider {
+    static var previews: some View {
+        let _ = FinBoxLending.Builder()
+            .apiKey(key: "f078b4d0-d171-4ed9-a1ce-c02134213b6c")
+            .customerID(id: "demo_lender_user_11221538")
+            .userToken(token: "oEuuQupgXPgGWeWSWKKBNePmXfmpcGmcIAeNCnTaYQHzOLJHFUXBPeMTHOQhOrve")
+            .environment(env: "UAT")
+            .build()
+        LendingView() {
+            payload in
+            debugPrint("Status Code", payload.code ?? "Status Code is empty")
         }
     }
 }
