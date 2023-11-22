@@ -12,7 +12,7 @@ class SessionViewModel: ObservableObject {
     let baseURL = "https://lendinguat.finbox.in"
     let sessionEndpoint = "/v1/user/clientSession"
     
-    @Published var sessionURL: String?
+    @Published var sessionUrl: String?
     
     func fetchSession() {
         debugPrint("Fetching Session...")
@@ -61,7 +61,7 @@ class SessionViewModel: ObservableObject {
                 debugPrint("Session Response URL: \(sessionResponse.data?.url ?? "")")
                     
                 DispatchQueue.main.async {
-                    self.sessionURL = sessionResponse.data?.url
+                    self.sessionUrl = sessionResponse.data?.url
                 }
             } catch {
                 self.handleClientError(error: error)
