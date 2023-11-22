@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+public struct FinBoxJourneyResult {
+    
+
+    // Status Code
+    public let code: String?
+    
+    // Screen name
+    public let screen: String?
+    
+    // Message
+    public let message: String?
+
+}
+

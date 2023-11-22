@@ -35,6 +35,6 @@ Show the Lending Screen
 LendingView() {
     payload in
     // Success or Failed journey based on the result code
-    debugPrint("Result Code", payload.resultCode)
+    debugPrint("Result Code", payload.code)
 }
 ```
