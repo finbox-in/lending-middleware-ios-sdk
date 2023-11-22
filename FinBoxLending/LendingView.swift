@@ -41,9 +41,9 @@ public struct LendingView: View {
 struct LendingView_Previews: PreviewProvider {
     static var previews: some View {
         let _ = FinBoxLending.Builder()
-            .apiKey(key: "iUJT1sxksi5ipCye69OTf3b8FCsQlYgl9J6SXRFY")
-            .customerID(id: "Nexarc_test_user_119109239944")
-            .userToken(token: "AuxlyTKMxkIylsMmEoeoNCocevmkMPvjZlssbSEFKDNZmbcjhAvXDoMWWjtyDUFI")
+            .apiKey(key: "f078b4d0-d171-4ed9-a1ce-c02134213b6c")
+            .customerID(id: "demo_lender_user_11221538")
+            .userToken(token: "oEuuQupgXPgGWeWSWKKBNePmXfmpcGmcIAeNCnTaYQHzOLJHFUXBPeMTHOQhOrve")
             .environment(env: "UAT")
             .build()
         LendingView() {
