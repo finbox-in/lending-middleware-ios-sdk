@@ -7,9 +7,8 @@
 
 import Foundation
 
-public struct FinBoxJourneyResult {
+public struct FinBoxJourneyResult: Codable {
     
-
     // Status Code
     public let code: String?
     
@@ -18,6 +17,6 @@ public struct FinBoxJourneyResult {
     
     // Message
     public let message: String?
-
+    
 }
 
