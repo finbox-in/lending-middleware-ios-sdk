@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3709B7D42B14907D00052CB3 /* WebEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3709B7D32B14907D00052CB3 /* WebEventResponse.swift */; };
 		3729CB4E2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CB4D2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift */; };
 		3729CB502B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CB4F2B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift */; };
 		6D8CBA602B0A84B0005D4275 /* FinBoxLending.docc in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA5F2B0A84B0005D4275 /* FinBoxLending.docc */; };
@@ -64,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3709B7D32B14907D00052CB3 /* WebEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebEventResponse.swift; sourceTree = "<group>"; };
 		3729CB4C2B0DECDB00E0D9C8 /* FinBoxLending.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FinBoxLending.podspec; sourceTree = "<group>"; };
 		3729CB4D2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxJourneyResult.swift; sourceTree = "<group>"; };
 		3729CB4F2B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinBoxWebViewHandler.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				6D8CBAA62B0CB538005D4275 /* SessionResponse.swift */,
 				6D8CBAA82B0CB5DA005D4275 /* SessionData.swift */,
 				3729CB4D2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift */,
+				3709B7D32B14907D00052CB3 /* WebEventResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D8CBA8A2B0B67F1005D4275 /* LendingView.swift in Sources */,
+				3709B7D42B14907D00052CB3 /* WebEventResponse.swift in Sources */,
 				6D8CBA602B0A84B0005D4275 /* FinBoxLending.docc in Sources */,
 				6D8CBA882B0B6573005D4275 /* SessionRequest.swift in Sources */,
 				6D8CBAA72B0CB538005D4275 /* SessionResponse.swift in Sources */,
