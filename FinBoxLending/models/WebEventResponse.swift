@@ -10,9 +10,9 @@ import Foundation
 struct WebEventResponse: Codable {
     
     // Status of the event response
-    let status: String
+    let status: String?
     
     // Event payload
-    let data: FinBoxJourneyResult?
+    let data: String?
     
 }
