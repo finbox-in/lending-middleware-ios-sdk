@@ -13,9 +13,13 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler {
     
     // Result Function
     let lendingResult : ((FinBoxJourneyResult) -> Void)
+    var closeCallback: (() -> Void)?
+
     
-    init(lendingResult: @escaping (FinBoxJourneyResult) -> Void) {
+    init(lendingResult: @escaping (FinBoxJourneyResult) -> Void, closeCallback: (() -> Void)?) {
         self.lendingResult = lendingResult
+        self.closeCallback = closeCallback
+        super.init()
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
