@@ -15,6 +15,7 @@ struct FinBoxWebView: UIViewRepresentable {
     
     // Result Function
     public let lendingResult : ((FinBoxJourneyResult) -> Void)
+    var closeCallback: (() -> Void)?
     
     func makeUIView(context: Context) -> WKWebView {
         // Create a configuration
@@ -22,7 +23,7 @@ struct FinBoxWebView: UIViewRepresentable {
         // Create a user controller
         config.userContentController = WKUserContentController()
         // Set user controller
-        config.userContentController.add(FinBoxWebViewHandler(lendingResult: self.lendingResult), name: "FbxLendingiOS")
+        config.userContentController.add(FinBoxWebViewHandler(lendingResult: self.lendingResult, closeCallback: closeCallback), name: "FbxLendingiOS")
         
         let webView = WKWebView(frame: .zero, configuration: config)
         return webView
