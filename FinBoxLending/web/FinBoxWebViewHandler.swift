@@ -36,14 +36,20 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler {
     }
     
     // Parse the message body from the webview event
-    func parseMessageBody(eventResponse: WebEventResponse) throws {
-        if (eventResponse.status == "PERSONAL_INFO_SUBMITTED") {
-            // Personal information is submitted
-        } else {
-            // Send the callback information
-            setCallbackPayload(eventResponse: eventResponse.data)
+    func parseMessageBody(eventResponse: WebEventResponse) {
+            switch (eventResponse.status) {
+                case Constants.FINBOX_LENDING_PERSONAL_INFO_SUBMITTED:
+                    debugPrint("Personal info submitted")
+                    
+                case Constants.FINBOX_LENDING_EXIT:
+                    debugPrint("User Exit")
+                    closeCallback?()
+
+                    
+                default:
+                    debugPrint("Default case")
+            }
         }
-    }
     
     // Update the callback payload
     func setCallbackPayload(eventResponse: FinBoxJourneyResult?) {
