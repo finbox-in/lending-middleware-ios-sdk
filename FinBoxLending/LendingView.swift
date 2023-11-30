@@ -23,11 +23,6 @@ public struct LendingView: View {
     public var body: some View {
         NavigationView {
             VStack {
-                
-            }.onAppear(perform: {
-                viewModel.fetchSession()
-                isWebViewPresented = true
-            }).sheet(isPresented: $isWebViewPresented) {
                 if (viewModel.sessionUrl != nil) {
                     // Load the webpage
                     FinBoxWebView(
@@ -48,8 +43,11 @@ public struct LendingView: View {
                         // Progress View is not available
                     }
                 }
-            }
-        }.navigationBarHidden(false)
+            }.onAppear(perform: {
+                viewModel.fetchSession()
+                isWebViewPresented = true
+            })
+        }.navigationBarHidden(true)
     }
 
 }
