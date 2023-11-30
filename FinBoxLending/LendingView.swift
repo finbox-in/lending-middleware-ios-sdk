@@ -11,6 +11,7 @@ public struct LendingView: View {
     
     @ObservedObject var viewModel = SessionViewModel()
     @State var isWebViewPresented = false
+    @Environment(\.presentationMode) var presentationMode
     
     // Result Function
     public let lendingResult : ((FinBoxJourneyResult) -> Void)
@@ -20,32 +21,35 @@ public struct LendingView: View {
     }
     
     public var body: some View {
-        VStack {
-            
-        }.onAppear(perform: {
-            viewModel.fetchSession()
-            isWebViewPresented = true
-        }).sheet(isPresented: $isWebViewPresented) {
-            if (viewModel.sessionUrl != nil) {
-                // Load the webpage
-                FinBoxWebView(
-                    urlString: viewModel.sessionUrl,
-                    lendingResult: lendingResult,
-                    closeCallback: {
-                        // Handle Close Callback
-                        isWebViewPresented = false
-                        debugPrint("Received Exit Callback in LendingView")
-                    }
-                )
-            } else {
-                if #available(iOS 14, *) {
-                    // Show progress
-                    ProgressView()
+        NavigationView {
+            VStack {
+                
+            }.onAppear(perform: {
+                viewModel.fetchSession()
+                isWebViewPresented = true
+            }).sheet(isPresented: $isWebViewPresented) {
+                if (viewModel.sessionUrl != nil) {
+                    // Load the webpage
+                    FinBoxWebView(
+                        urlString: viewModel.sessionUrl,
+                        lendingResult: lendingResult,
+                        closeCallback: {
+                            // Handle Close Callback
+                            isWebViewPresented = false
+                            debugPrint("Received Exit Callback in LendingView")
+                            presentationMode.wrappedValue.dismiss() // Navigate back when webview is closed
+                        }
+                    )
                 } else {
-                    // Progress View is not available
+                    if #available(iOS 14, *) {
+                        // Show progress
+                        ProgressView()
+                    } else {
+                        // Progress View is not available
+                    }
                 }
             }
-        }
+        }.navigationBarHidden(false)
     }
 
 }
