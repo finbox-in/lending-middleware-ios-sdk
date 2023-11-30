@@ -13,9 +13,13 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler {
     
     // Result Function
     let lendingResult : ((FinBoxJourneyResult) -> Void)
+    var closeCallback: (() -> Void)?
+
     
-    init(lendingResult: @escaping (FinBoxJourneyResult) -> Void) {
+    init(lendingResult: @escaping (FinBoxJourneyResult) -> Void, closeCallback: (() -> Void)?) {
         self.lendingResult = lendingResult
+        self.closeCallback = closeCallback
+        super.init()
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -28,6 +32,21 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler {
     }
     
     // Parse the message body from the webview event
+<<<<<<< FinBoxLending/web/FinBoxWebViewHandler.swift
+    func parseMessageBody(eventResponse: WebEventResponse) {
+            switch (eventResponse.status) {
+                case Constants.FINBOX_LENDING_PERSONAL_INFO_SUBMITTED:
+                    debugPrint("Personal info submitted")
+                    
+                case Constants.FINBOX_LENDING_EXIT:
+                    debugPrint("User Exit")
+                    closeCallback?()
+
+                    
+                default:
+                    debugPrint("Default case")
+            }
+
     func parseMessageBody(message: Any) throws {
         // Parse the message body received from webview
         debugPrint("Message Body", message)
@@ -39,13 +58,22 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler {
         let response = try JSONDecoder().decode(WebEventResponse.self, from: jsonData)
         debugPrint("Json Data Status", response.status ?? "Status is empty")
         
-        if (response.status == "PERSONAL_INFO_SUBMITTED") {
-            // Personal information is submitted
-        } else {
-            // Send the callback information
-            try setCallbackPayload(eventResponse: getEventResponse(response: response.data))
+        switch (response.status) {
+                case Constants.FINBOX_LENDING_PERSONAL_INFO_SUBMITTED:
+                    // Personal information is submitted
+                    debugPrint("Personal info submitted")
+                    
+                case Constants.FINBOX_LENDING_EXIT:
+                    debugPrint("User Exit")
+                    closeCallback?()
+
+                    
+                default:
+                    // Send the callback information
+                    debugPrint("Default case")
+                    try setCallbackPayload(eventResponse: getEventResponse(response: response.data))
+            }
         }
-    }
     
     // Takes event response in string format and return it as a struct
     func getEventResponse(response: String?) throws -> FinBoxJourneyResult {

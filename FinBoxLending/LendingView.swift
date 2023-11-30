@@ -10,6 +10,7 @@ import SwiftUI
 public struct LendingView: View {
     
     @ObservedObject var viewModel = SessionViewModel()
+    @State var isWebViewPresented = false
     
     // Result Function
     public let lendingResult : ((FinBoxJourneyResult) -> Void)
@@ -20,9 +21,22 @@ public struct LendingView: View {
     
     public var body: some View {
         VStack {
+            
+        }.onAppear(perform: {
+            viewModel.fetchSession()
+            isWebViewPresented = true
+        }).sheet(isPresented: $isWebViewPresented) {
             if (viewModel.sessionUrl != nil) {
                 // Load the webpage
-                FinBoxWebView(urlString: viewModel.sessionUrl, lendingResult: lendingResult)
+                FinBoxWebView(
+                    urlString: viewModel.sessionUrl,
+                    lendingResult: lendingResult,
+                    closeCallback: {
+                        // Handle Close Callback
+                        isWebViewPresented = false
+                        debugPrint("Received Exit Callback in LendingView")
+                    }
+                )
             } else {
                 if #available(iOS 14, *) {
                     // Show progress
@@ -31,12 +45,11 @@ public struct LendingView: View {
                     // Progress View is not available
                 }
             }
-        }.onAppear(perform: {
-            viewModel.fetchSession()
-        })
+        }
     }
 
 }
+
 
 struct LendingView_Previews: PreviewProvider {
     static var previews: some View {
