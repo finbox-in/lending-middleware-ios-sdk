@@ -31,22 +31,6 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler {
         
     }
     
-    // Parse the message body from the webview event
-<<<<<<< FinBoxLending/web/FinBoxWebViewHandler.swift
-    func parseMessageBody(eventResponse: WebEventResponse) {
-            switch (eventResponse.status) {
-                case Constants.FINBOX_LENDING_PERSONAL_INFO_SUBMITTED:
-                    debugPrint("Personal info submitted")
-                    
-                case Constants.FINBOX_LENDING_EXIT:
-                    debugPrint("User Exit")
-                    closeCallback?()
-
-                    
-                default:
-                    debugPrint("Default case")
-            }
-
     func parseMessageBody(message: Any) throws {
         // Parse the message body received from webview
         debugPrint("Message Body", message)
