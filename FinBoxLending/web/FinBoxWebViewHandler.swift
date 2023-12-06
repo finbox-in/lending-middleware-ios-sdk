@@ -5,11 +5,12 @@
 //  Created by Srikar on 17/11/23.
 //
 
+import AVFoundation
 import Foundation
 import WebKit
 
 
-class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler {
+class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // Result Function
     let lendingResult : ((FinBoxJourneyResult) -> Void)
@@ -102,7 +103,7 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler {
                 
             case CAMERA_PERMISSION:
                 debugPrint("Lending Camera Permission Requested")
-                // TODO: Check this later
+                requestCameraPermission()
                 
             default:
                 // Send the callback information
@@ -121,6 +122,18 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler {
         
         // Send callback to the View
         self.lendingResult(payload)
+    }
+    
+    private func requestCameraPermission() {
+        if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                if granted {
+                    print("Camera permission granted")
+                } else {
+                    print("Camera permission denied")
+                }
+            }
+        }
     }
     
 }
