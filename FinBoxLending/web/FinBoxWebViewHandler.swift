@@ -6,14 +6,17 @@
 //
 
 import AVFoundation
+import CoreLocation
 import Foundation
 import WebKit
 
 
-class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     // Result Function
     let lendingResult : ((FinBoxJourneyResult) -> Void)
+    
+    let locationManager = CLLocationManager()
     
     init(lendingResult: @escaping (FinBoxJourneyResult) -> Void) {
         self.lendingResult = lendingResult
@@ -103,7 +106,6 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
                 
             case CAMERA_PERMISSION:
                 debugPrint("Lending Camera Permission Requested")
-                requestCameraPermission()
                 
             default:
                 // Send the callback information
@@ -124,16 +126,83 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
         self.lendingResult(payload)
     }
     
-    private func requestCameraPermission() {
-        if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
-            AVCaptureDevice.requestAccess(for: .video) { granted in
-                if granted {
-                    print("Camera permission granted")
-                } else {
-                    print("Camera permission denied")
-                }
+    func requestLocationPermission() {
+        debugPrint("Requesting Location Permission")
+        // Check if location services are enabled
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                debugPrint("Location Services Enabled")
+                self.locationManager.delegate = self
+                self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                self.locationManager.requestLocation()
+            } else {
+                debugPrint("Location Services Disabled")
+                // Handle the case where location services are not enabled
+                self.showLocationServicesDisabledAlert()
             }
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        debugPrint("Inside Location Manager Method")
+        switch status {
+            case .authorizedWhenInUse:
+                // Location permission granted
+                debugPrint("Location services authorized")
+                locationManager.requestLocation()
+                break
+            case .denied, .restricted:
+                // Location permission denied or restricted
+                debugPrint("Location services denied. Showing alert.")
+                showLocationServicesDisabledAlert()
+                break
+            case .notDetermined:
+                debugPrint("Location services not determined.")
+                // Location services authorization status not determined yet
+                locationManager.requestWhenInUseAuthorization()
+            default:
+                break
+        }
+    }
+    
+    func showLocationServicesDisabledAlert() {
+        let alert = UIAlertController(
+            title: "Location Services Disabled",
+            message: "Please enable location services for this app in Settings.",
+            preferredStyle: .alert
+        )
+        
+        // Add a button to open Settings
+        alert.addAction(UIAlertAction(title: "Open Settings", style: .default) { _ in
+            if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+            }
+        })
+        
+        // Add a cancel button
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        debugPrint("Showing Alert")
+        
+        if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
+            debugPrint("Showing Alert: Inside rootViewController")
+            DispatchQueue.main.async {
+                debugPrint("Showing Alert: Inside DispatchQueue")
+                rootViewController.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // Handle location updates here
+        let location = locations.last
+        debugPrint("Current location: \(location?.coordinate.latitude), \(location?.coordinate.longitude)")
+        // If we get location, update to Web
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        // Handle location update errors
+        debugPrint("Location update error: \(error.localizedDescription)")
     }
     
 }
