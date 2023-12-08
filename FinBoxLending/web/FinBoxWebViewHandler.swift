@@ -98,7 +98,7 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
                 
             case FINBOX_LENDING_LOCATION_PERMISSION:
                 debugPrint("Lending Location Permission Requested")
-                // TODO: Check this later
+                requestLocation()
                 
             case FINBOX_LENDING_SHOW_PROFILE_ICON:
                 debugPrint("Lending Show Profile Icon")
@@ -126,8 +126,8 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
         self.lendingResult(payload)
     }
     
-    func requestLocationPermission() {
-        debugPrint("Requesting Location Permission")
+    func requestLocation() {
+        debugPrint("Requesting Location")
         // Check if location services are enabled
         DispatchQueue.global().async {
             if CLLocationManager.locationServicesEnabled() {
