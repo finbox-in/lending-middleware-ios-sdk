@@ -7,6 +7,6 @@
 
 import Foundation
 
-public enum LendingEnvironment {
+public enum LendingEnvironment: String {
     case DEV, UAT, PROD
 }
