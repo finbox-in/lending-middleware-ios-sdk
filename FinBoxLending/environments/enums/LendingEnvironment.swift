@@ -10,5 +10,9 @@ import Foundation
 
 // Hide DEV from release build
 public enum LendingEnvironment: String {
-    case DEV, UAT, PROD
+    case UAT, PROD
+    
+    #if DEBUG
+    case DEV
+    #endif
 }
