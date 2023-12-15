@@ -18,8 +18,11 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
     
     let locationManager = CLLocationManager()
     
-    init(lendingResult: @escaping (FinBoxJourneyResult) -> Void) {
+    let webView: WKWebView?
+    
+    init(lendingResult: @escaping (FinBoxJourneyResult) -> Void, webView: WKWebView) {
         self.lendingResult = lendingResult
+        self.webView = webView
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -98,6 +101,7 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
                 
             case FINBOX_LENDING_LOCATION_PERMISSION:
                 debugPrint("Lending Location Permission Requested")
+                finBoxJourneyResult.code = "LENDING_LOCATION_PERMISSION"
                 requestLocation()
                 
             case FINBOX_LENDING_SHOW_PROFILE_ICON:
@@ -194,15 +198,25 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // Handle location updates here
         let location = locations.last
         debugPrint("Current location: \(location?.coordinate.latitude), \(location?.coordinate.longitude)")
-        // If we get location, update to Web
+        // Update to web upon location receipt
+        let script = "setLocation('${location?.coordinate.latitude}','${location?.coordinate.longitude}','${location?.coordinate.altitude}','${location?.coordinate.accuracy}')"
+        webView?.evaluateJavaScript(script, completionHandler: { (result, error) in
+            if let error = error {
+                print("Error executing JS: \(error)")
+            } else {
+                print("JS executed successfully")
+            }
+        })
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         // Handle location update errors
         debugPrint("Location update error: \(error.localizedDescription)")
+        if (error.localizedDescription.contains("kCLErrorDomain error 1.")) {
+            showLocationServicesDisabledAlert()
+        }
     }
     
 }
