@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-// Hide DEV from release build
 public enum LendingEnvironment: String {
     case UAT, PROD
     
