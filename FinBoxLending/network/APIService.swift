@@ -8,51 +8,106 @@
 import Foundation
 
 struct APIService {
-    func makePostRequest(urlString: String) {
-
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL")
+    
+    static let shared = APIService()
+    
+    func getSessionURL() -> String {
+        return EnvironmentManager.instance.getBaseURL() + FINBOX_LENDING_CLIENT_SESSION_ENDPOINT
+    }
+    
+    func fetchSession(completion: @escaping (String) -> Void) {
+        // Get request body
+        let requestBody = self.getRequestBody()
+        
+        // Null check
+        guard let sessionBody = requestBody else {
+            debugPrint("Request body is null")
             return
         }
-
-        // TODO: Replace with params
-        let parameters: [String: Any] = [
-            "key1": "value1",
-            "key2": "value2"
-        ]
-
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: parameters)
-
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpBody = jsonData
-
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                    return
-                }
-
-                guard let httpResponse = response as? HTTPURLResponse else {
-                    print("Invalid response")
-                    return
-                }
-
-                if (200...299).contains(httpResponse.statusCode) {
-                    if let data = data {
-                        // Handle the response data here
-                        print("Response: \(String(data: data, encoding: .utf8) as String?)")
-                    }
-                } else {
-                    print("HTTP Response Code: \(httpResponse.statusCode)")
-                }
-            }
-
-            task.resume()
-        } catch {
-            print("Error serializing JSON: \(error.localizedDescription)")
+        
+        // Make the api call
+        let requestParams = Utils.postRequest(urlString: getSessionURL(), body: sessionBody)
+        
+        guard let requestParams = requestParams else {
+            debugPrint("Request Params null")
+            return
         }
+        
+        let task = URLSession.shared.dataTask(with: requestParams) { data, response, error in
+            
+            if let error = error {
+                self.handleClientError(error: error)
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                self.handleServerError(response: response)
+                return
+            }
+            
+            guard let data = data else {
+                self.handleClientError(error: "Failed to receive redirect url")
+                return
+            }
+            
+            do {
+                let sessionResponse: SessionResponse = try
+                JSONDecoder().decode(SessionResponse.self, from: data)
+                debugPrint("Session Response URL: \(sessionResponse.data?.url as String?)")
+                
+//                DispatchQueue.main.async {
+//                    self.sessionUrl = sessionResponse.data?.url
+//                }
+                
+                DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+                    let result = sessionResponse.data?.url
+                    completion(sessionResponse.data?.url ?? "")
+                }
+            } catch {
+                self.handleClientError(error: error)
+            }
+            
+        }
+        
+        task.resume()
     }
+    
+    func getRequestBody() -> Data? {
+        let sessionRequest = getSessionRequest()
+        
+        guard let sessionReq = sessionRequest else {
+            debugPrint("RequestBody: sessionRequest null")
+            return nil
+        }
+        
+        let jsonEncoder = JSONEncoder()
+        let requestBody = try! jsonEncoder.encode(sessionReq)
+        
+        return requestBody
+    }
+    
+    func getSessionRequest() -> SessionRequest? {
+        let userPref = FinBoxLendingPref()
+        
+        guard let customerID = userPref.customerID else {
+            debugPrint("getSessionRequest: Customer ID null")
+            return nil
+        }
+        
+        // TODO: Read sdk version number from pod file
+        // Create a session object
+        return SessionRequest(customerID: customerID, withdrawAmount: userPref.creditLineAmount,
+                              redirectURL: nil, transactionID: userPref.creditLineTransactionID, source: nil,
+                              hideClose: false, hidefaq: true, hideback: false, hideNav: true,
+                              hidePoweredBy: userPref.hidePoweredBy, sdkType: "hybrid:ios:0.0.1")
+    }
+    
+    func handleClientError(error: Any) {
+        debugPrint("Response error: \(error)")
+    }
+    
+    func handleServerError(response: URLResponse?) {
+        debugPrint("Response Error: \(response as URLResponse?)")
+    }
+    
 }
