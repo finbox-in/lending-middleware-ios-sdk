@@ -35,8 +35,13 @@ struct FinBoxWebView: UIViewRepresentable {
         }
 
         let webView = WKWebView(frame: UIScreen.main.bounds, configuration: config)
-        config.userContentController.add(FinBoxWebViewHandler(lendingResult: lendingResult), name: "FbxLendingiOS")
-    
+        config.userContentController.add(
+            FinBoxWebViewHandler(
+                lendingResult: lendingResult,
+                webView: webView
+            ),
+            name: "FbxLendingiOS")
+        
         return webView
     }
     
