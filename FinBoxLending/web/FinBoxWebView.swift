@@ -21,10 +21,22 @@ struct FinBoxWebView: UIViewRepresentable {
         let config = WKWebViewConfiguration()
         // Create a user controller
         config.userContentController = WKUserContentController()
-        // Set user controller
-        config.userContentController.add(FinBoxWebViewHandler(lendingResult: self.lendingResult), name: "FbxLendingiOS")
-        
-        let webView = WKWebView(frame: .zero, configuration: config)
+
+        // Opens camera in image mode
+        config.allowsInlineMediaPlayback = true
+
+        // Checks whether media playback requires user action (like a tap) in order to start
+        if #available(iOS 10.0, *) {
+            config.mediaTypesRequiringUserActionForPlayback = []
+        } else if #available(iOS 9.0, *) {
+            config.requiresUserActionForMediaPlayback = false
+        } else {
+            config.mediaPlaybackRequiresUserAction = false
+        }
+
+        let webView = WKWebView(frame: UIScreen.main.bounds, configuration: config)
+        config.userContentController.add(FinBoxWebViewHandler(lendingResult: lendingResult), name: "FbxLendingiOS")
+    
         return webView
     }
     
