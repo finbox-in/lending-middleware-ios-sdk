@@ -55,13 +55,9 @@ struct APIService {
                 JSONDecoder().decode(SessionResponse.self, from: data)
                 debugPrint("Session Response URL: \(sessionResponse.data?.url as String?)")
                 
-//                DispatchQueue.main.async {
-//                    self.sessionUrl = sessionResponse.data?.url
-//                }
-                
-                DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+                DispatchQueue.global().asyncAfter(deadline: .now()) {
                     let result = sessionResponse.data?.url
-                    completion(sessionResponse.data?.url ?? "")
+                    completion(result ?? "")
                 }
             } catch {
                 self.handleClientError(error: error)
