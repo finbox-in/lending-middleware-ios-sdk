@@ -26,7 +26,7 @@ struct APIService {
         }
         
         // Make the api call
-        let requestParams = Utils.postRequest(urlString: getSessionURL(), body: sessionBody)
+        let requestParams = NetworkUtils.postRequest(urlString: getSessionURL(), body: sessionBody)
         
         guard let requestParams = requestParams else {
             debugPrint("Request Params null")
