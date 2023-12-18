@@ -50,7 +50,7 @@ struct FinBoxWebView: UIViewRepresentable {
             debugPrint("Session URL is empty")
             return
         }
-        uiView.load(Utils.getRequest(urlString: sessionURL))
+        uiView.load(NetworkUtils.getRequest(urlString: sessionURL))
     }
     
 }
