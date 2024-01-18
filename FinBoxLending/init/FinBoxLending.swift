@@ -9,7 +9,7 @@ import Foundation
 
 public class FinBoxLending {
     
-    private init(customerID: String, apiKey: String, userToken: String, environment: LendingEnvironment, creditLineAmount: Float?, creditLineTransactionID: String?, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
+    private init(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: Float?, creditLineTransactionID: String?, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
         
     }
     
@@ -22,7 +22,7 @@ public class FinBoxLending {
         private var customerID: String?
         private var apiKey: String?
         private var userToken: String?
-        private var environment: LendingEnvironment?
+        private var environment: String?
         private var creditLineAmount: Float?
         private var creditLineTransactionID: String?
         // TODO: Add toolbar config
@@ -46,7 +46,7 @@ public class FinBoxLending {
             return self
         }
         
-        public func environment(env: LendingEnvironment) -> Builder {
+        public func environment(env: String) -> Builder {
             self.environment = env
             return self
         }
@@ -105,7 +105,7 @@ public class FinBoxLending {
             return FinBoxLending(customerID: id, apiKey: key, userToken: token, environment: env, creditLineAmount: cLineAmt, creditLineTransactionID: cLineTranxID, showToolBar: showTB, hidePoweredBy: hidePB, dcEnabled: dcEnabled)
         }
         
-        public func savePreferences(customerID: String, apiKey: String, userToken: String, environment: LendingEnvironment, creditLineAmount: Float?, creditLineTransactionID: String?, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
+        public func savePreferences(customerID: String, apiKey: String, userToken: String, environment: String, creditLineAmount: Float?, creditLineTransactionID: String?, showToolBar: Bool, hidePoweredBy: Bool, dcEnabled: Bool) {
             let userPrefs = FinBoxLendingPref()
             
             userPrefs.apiKey = apiKey
