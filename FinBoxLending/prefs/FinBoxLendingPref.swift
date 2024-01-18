@@ -39,17 +39,12 @@ class FinBoxLendingPref {
         }
     }
     
-    var environment: LendingEnvironment {
+    var environment: String {
         get {
-            if let rawValue = userDefaults.string(forKey: FINBOX_LENDING_ENVIRONMENT),
-               let environment = LendingEnvironment(rawValue: rawValue) {
-                return environment
-            }
-            // Setting default LendingEnvironment as UAT if nothing found
-            return LendingEnvironment.UAT
+            return userDefaults.string(forKey: FINBOX_LENDING_ENVIRONMENT) as? String ?? "UAT"
         }
         set {
-            userDefaults.set(newValue.rawValue, forKey: FINBOX_LENDING_ENVIRONMENT)
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_ENVIRONMENT)
         }
     }
     
