@@ -23,22 +23,19 @@ class EnvironmentManager {
     
     // Returns base url wrt Environment
     func getBaseURL() -> String {
-        var baseURL: String = ""
         let environment = getEnvironment()
         
-//        if (environment == "PROD") {
-//            baseURL = FINBOX_LENDING_PROD_BASE_URL
-//        } else {
-//            return
-//        }
+        if (environment == "PROD") {
+            return FINBOX_LENDING_PROD_BASE_URL
+        }
         
+        // Env is not prod. Process the Env.
         return processEnvironment(environment: environment)
-        
-        return baseURL
     }
     
+    /// Passes the environment through regex and returns base url with region number
     private func processEnvironment(environment: String) -> String {
-        var url = "https://lendinguat.finbox.in"
+        var url = FINBOX_LENDING_UAT_BASE_URL
         let envAndRegion = environment.uppercased()
 
         // Pass 1: Extract Environment ("UAT", "DEV", "PROD")
@@ -46,7 +43,7 @@ class EnvironmentManager {
         if let envMatch = envRegex?.firstMatch(in: envAndRegion, options: [], range: NSRange(location: 0, length: envAndRegion.utf16.count)) {
             let envResult = (envAndRegion as NSString).substring(with: envMatch.range).lowercased()
 
-            if envResult == "prod" { return url }
+            if envResult == "prod" { return FINBOX_LENDING_PROD_BASE_URL }
 
             if envResult == "uat" { print("UAT") }
 
@@ -59,7 +56,6 @@ class EnvironmentManager {
                 #endif
             }
             
-
             // Pass 2: Extract Region (Numbers)
             let regionRegex = try? NSRegularExpression(pattern: "\\d{1,2}$", options: .caseInsensitive)
             if let regionMatch = regionRegex?.firstMatch(in: envAndRegion, options: [], range: NSRange(location: 0, length: envAndRegion.utf16.count)) {
