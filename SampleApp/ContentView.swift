@@ -36,10 +36,12 @@ struct ContentView: View {
     
     func startLending() -> some View {
         let _ = FinBoxLending.Builder()
-            .apiKey(key: "iUJT1sxksi5ipCye69OTf3b8FCsQlYgl9J6SXRFY") // UAT - IIFL - PL
-            .customerID(id: "iuybsgIBGIEGN3skfjb")
-            .userToken(token: "npyQBvVMmpHUxcjspTlcPrUqdmKdbsMQAhwdrxhWNJdcGdOTcyDteNMLfiZLLsSD")
-            .environment(env: LendingEnvironment.UAT)
+//            .apiKey(key: "iUJT1sxksi5ipCye69OTf3b8FCsQlYgl9J6SXRFY") // UAT - IIFL - PL
+//            .apiKey(key: "sni196oD2W4iM9CO7RuKk105wLDkkEQ9mDxgj0Gh")
+            .apiKey(key: "TGCNfiXhYBSaPiRFwXveljpcCkgJihPbbtVElQxW")
+            .customerID(id: "ABCD80575")
+            .userToken(token: "QELthnsBwjVnmVJAdAzsZQeIKGHvlXidqmLdQOILSmJriNnhFnmeJxTWaPJhpwxz")
+            .environment(env: "DEV1")
             .build()
         
         return LendingView() {
