@@ -81,7 +81,7 @@ FinBox Lending allows users to submit their bank account statements, kyc details
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/finbox-in/lending-middleware-ios-sdk", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/finbox-in/lending-middleware-ios-sdk.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
