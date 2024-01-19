@@ -1,5 +1,10 @@
 #  FinBox Lending iOS SDK
 
+## 0.0.6
+
+Enable multiple environments
+
+
 ## 0.0.4
 
 Make Callback Payload Codable
