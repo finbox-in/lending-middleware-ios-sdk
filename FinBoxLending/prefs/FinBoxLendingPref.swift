@@ -41,7 +41,7 @@ class FinBoxLendingPref {
     
     var environment: String {
         get {
-            return userDefaults.string(forKey: FINBOX_LENDING_ENVIRONMENT) as? String ?? "UAT"
+            return userDefaults.string(forKey: FINBOX_LENDING_ENVIRONMENT) ?? "UAT"
         }
         set {
             userDefaults.set(newValue, forKey: FINBOX_LENDING_ENVIRONMENT)

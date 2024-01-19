@@ -57,7 +57,7 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
             message: nil
         )
         
-        debugPrint("Result Response: \(webEventResponse)")
+        debugPrint("Result Response", webEventResponse ?? "Empty Web Response")
         
         switch (webEventResponse?.status) {
             case FINBOX_LENDING_PERSONAL_INFO_SUBMITTED:
@@ -186,9 +186,13 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
         // Add a cancel button
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
-        debugPrint("Showing Alert")
+        let keyWindow = UIApplication
+                        .shared
+                        .connectedScenes
+                        .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+                        .last { $0.isKeyWindow }
         
-        if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
+        if let rootViewController = keyWindow?.rootViewController {
             debugPrint("Showing Alert: Inside rootViewController")
             DispatchQueue.main.async {
                 debugPrint("Showing Alert: Inside DispatchQueue")
@@ -199,7 +203,7 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
-        debugPrint("Current location: \(location?.coordinate.latitude), \(location?.coordinate.longitude)")
+        debugPrint("Current location", location?.coordinate.latitude ?? "No Latitude", location?.coordinate.longitude ?? "No Longitude")
         // Update to web upon location receipt
         let script = "setLocation('${location?.coordinate.latitude}','${location?.coordinate.longitude}','${location?.coordinate.altitude}','${location?.coordinate.accuracy}')"
         webView?.evaluateJavaScript(script, completionHandler: { (result, error) in
