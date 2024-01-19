@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Utils {
+struct NetworkUtils {
     
     static func getRequest(urlString: String) -> URLRequest {
         return URLRequest(url: URL(string: urlString)!)

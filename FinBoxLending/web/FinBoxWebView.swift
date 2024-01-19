@@ -21,10 +21,21 @@ struct FinBoxWebView: UIViewRepresentable {
         let config = WKWebViewConfiguration()
         // Create a user controller
         config.userContentController = WKUserContentController()
-        // Set user controller
-        config.userContentController.add(FinBoxWebViewHandler(lendingResult: self.lendingResult), name: "FinBoxIosWebViewInterface")
+
+        // Opens camera in image mode
+        config.allowsInlineMediaPlayback = true
+
+        // Checks whether media playback requires user action (like a tap) in order to start
+        config.mediaTypesRequiringUserActionForPlayback = []
+
+        let webView = WKWebView(frame: UIScreen.main.bounds, configuration: config)
+        config.userContentController.add(
+            FinBoxWebViewHandler(
+                lendingResult: lendingResult,
+                webView: webView
+            ),
+            name: "FbxLendingiOS")
         
-        let webView = WKWebView(frame: .zero, configuration: config)
         return webView
     }
     
@@ -33,7 +44,7 @@ struct FinBoxWebView: UIViewRepresentable {
             debugPrint("Session URL is empty")
             return
         }
-        uiView.load(Utils.getRequest(urlString: sessionURL))
+        uiView.load(NetworkUtils.getRequest(urlString: sessionURL))
     }
     
 }

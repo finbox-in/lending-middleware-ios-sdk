@@ -14,73 +14,73 @@ class FinBoxLendingPref {
     
     var apiKey: String? {
         get {
-            return userDefaults.object(forKey: Constants.FINBOX_LENDING_API_KEY) as? String ?? nil
+            return userDefaults.object(forKey: FINBOX_LENDING_API_KEY) as? String ?? nil
         }
         set {
-            userDefaults.set(newValue, forKey: Constants.FINBOX_LENDING_API_KEY)
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_API_KEY)
         }
     }
     
     var customerID: String? {
         get {
-            return userDefaults.object(forKey: Constants.FINBOX_LENDING_CUSTOMER_ID) as? String ?? nil
+            return userDefaults.object(forKey: FINBOX_LENDING_CUSTOMER_ID) as? String ?? nil
         }
         set {
-            userDefaults.set(newValue, forKey: Constants.FINBOX_LENDING_CUSTOMER_ID)
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_CUSTOMER_ID)
         }
     }
     
     var userToken: String? {
         get {
-            return userDefaults.object(forKey: Constants.FINBOX_LENDING_USER_TOKEN) as? String ?? nil
+            return userDefaults.object(forKey: FINBOX_LENDING_USER_TOKEN) as? String ?? nil
         }
         set {
-            userDefaults.set(newValue, forKey: Constants.FINBOX_LENDING_USER_TOKEN)
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_USER_TOKEN)
         }
     }
     
-    var environment: String? {
+    var environment: String {
         get {
-            return userDefaults.object(forKey: Constants.FINBOX_LENDING_ENVIRONMENT) as? String ?? nil
+            return userDefaults.string(forKey: FINBOX_LENDING_ENVIRONMENT) ?? "UAT"
         }
         set {
-            userDefaults.set(newValue, forKey: Constants.FINBOX_LENDING_ENVIRONMENT)
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_ENVIRONMENT)
         }
     }
     
     var creditLineAmount: Float? {
         get {
-            return userDefaults.object(forKey: Constants.FINBOX_LENDING_CREDIT_LINE_AMOUNT) as? Float ?? 0.0
+            return userDefaults.object(forKey: FINBOX_LENDING_CREDIT_LINE_AMOUNT) as? Float ?? 0.0
         }
         set {
-            userDefaults.set(newValue, forKey: Constants.FINBOX_LENDING_CREDIT_LINE_AMOUNT)
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_CREDIT_LINE_AMOUNT)
         }
     }
     
     var creditLineTransactionID: String? {
         get {
-            return userDefaults.object(forKey: Constants.FINBOX_LENDING_CREDIT_LINE_TRANSACTION_ID) as? String ?? nil
+            return userDefaults.object(forKey: FINBOX_LENDING_CREDIT_LINE_TRANSACTION_ID) as? String ?? nil
         }
         set {
-            userDefaults.set(newValue, forKey: Constants.FINBOX_LENDING_CREDIT_LINE_TRANSACTION_ID)
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_CREDIT_LINE_TRANSACTION_ID)
         }
     }
     
     var showToolBar: Bool? {
         get {
-            return userDefaults.object(forKey: Constants.FINBOX_LENDING_SHOW_TOOL_BAR) as? Bool ?? nil
+            return userDefaults.object(forKey: FINBOX_LENDING_SHOW_TOOL_BAR) as? Bool ?? nil
         }
         set {
-            userDefaults.set(newValue, forKey: Constants.FINBOX_LENDING_SHOW_TOOL_BAR)
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_SHOW_TOOL_BAR)
         }
     }
     
     var hidePoweredBy: Bool? {
         get {
-            return userDefaults.object(forKey: Constants.FINBOX_LENDING_HIDE_POWERED_BY) as? Bool ?? nil
+            return userDefaults.object(forKey: FINBOX_LENDING_HIDE_POWERED_BY) as? Bool ?? nil
         }
         set {
-            userDefaults.set(newValue, forKey: Constants.FINBOX_LENDING_HIDE_POWERED_BY)
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_HIDE_POWERED_BY)
         }
     }
     

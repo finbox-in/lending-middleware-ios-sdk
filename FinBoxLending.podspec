@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "FinBoxLending"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.8"
   spec.summary      = "FinBoxLending IOS SDK to enable Lending journey for IOS devices"
 
   # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
 FinBox Lending allows users to submit their bank account statements, kyc details, sign aggrements and pay EMIs in your app enabling the user to complete the end to end lending journey. This SDK will help you integrate Lending Flow in your application flow.
                    DESC
 
-  spec.homepage     = "https://gitlab.com/finbox/embeddedfinance/mobile/ios-middleware-sdk"
+  spec.homepage     = "https://github.com/finbox-in/lending-middleware-ios-sdk"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -81,7 +81,7 @@ FinBox Lending allows users to submit their bank account statements, kyc details
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://gitlab.com/finbox/embeddedfinance/mobile/ios-middleware-sdk", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/finbox-in/lending-middleware-ios-sdk.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

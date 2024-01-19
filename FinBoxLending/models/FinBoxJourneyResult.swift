@@ -7,17 +7,16 @@
 
 import Foundation
 
-public struct FinBoxJourneyResult {
+public struct FinBoxJourneyResult: Codable {
     
-
     // Status Code
-    public let code: String?
+    public var code: String?
     
     // Screen name
-    public let screen: String?
+    public var screen: String?
     
     // Message
-    public let message: String?
-
+    public var message: String?
+    
 }
 

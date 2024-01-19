@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3709B7D42B14907D00052CB3 /* WebEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3709B7D32B14907D00052CB3 /* WebEventResponse.swift */; };
 		3729CB4E2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CB4D2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift */; };
 		3729CB502B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CB4F2B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift */; };
+		6D6031F12B2C5A0600818314 /* LendingEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6031F02B2C5A0600818314 /* LendingEnvironment.swift */; };
+		6D6031F42B2C5E1200818314 /* EnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6031F32B2C5E1200818314 /* EnvironmentManager.swift */; };
 		6D8CBA602B0A84B0005D4275 /* FinBoxLending.docc in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA5F2B0A84B0005D4275 /* FinBoxLending.docc */; };
 		6D8CBA662B0A84B0005D4275 /* FinBoxLending.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8CBA5B2B0A84B0005D4275 /* FinBoxLending.framework */; };
 		6D8CBA6B2B0A84B0005D4275 /* FinBoxLendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA6A2B0A84B0005D4275 /* FinBoxLendingTests.swift */; };
@@ -20,7 +23,7 @@
 		6D8CBA882B0B6573005D4275 /* SessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA872B0B6573005D4275 /* SessionRequest.swift */; };
 		6D8CBA8A2B0B67F1005D4275 /* LendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA892B0B67F1005D4275 /* LendingView.swift */; };
 		6D8CBA8C2B0B6966005D4275 /* FinBoxWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA8B2B0B6966005D4275 /* FinBoxWebView.swift */; };
-		6D8CBA902B0B6BB8005D4275 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA8F2B0B6BB8005D4275 /* Utils.swift */; };
+		6D8CBA902B0B6BB8005D4275 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA8F2B0B6BB8005D4275 /* NetworkUtils.swift */; };
 		6D8CBA982B0B6EDE005D4275 /* SampleAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA972B0B6EDE005D4275 /* SampleAppApp.swift */; };
 		6D8CBA9A2B0B6EDE005D4275 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA992B0B6EDE005D4275 /* ContentView.swift */; };
 		6D8CBA9C2B0B6EE0005D4275 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8CBA9B2B0B6EE0005D4275 /* Assets.xcassets */; };
@@ -64,9 +67,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3709B7D32B14907D00052CB3 /* WebEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebEventResponse.swift; sourceTree = "<group>"; };
 		3729CB4C2B0DECDB00E0D9C8 /* FinBoxLending.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FinBoxLending.podspec; sourceTree = "<group>"; };
 		3729CB4D2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxJourneyResult.swift; sourceTree = "<group>"; };
 		3729CB4F2B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinBoxWebViewHandler.swift; sourceTree = "<group>"; };
+		6D49844B2B20BC3E0021431C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6D6031F02B2C5A0600818314 /* LendingEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendingEnvironment.swift; sourceTree = "<group>"; };
+		6D6031F32B2C5E1200818314 /* EnvironmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentManager.swift; sourceTree = "<group>"; };
 		6D8CBA5B2B0A84B0005D4275 /* FinBoxLending.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FinBoxLending.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8CBA5E2B0A84B0005D4275 /* FinBoxLending.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinBoxLending.h; sourceTree = "<group>"; };
 		6D8CBA5F2B0A84B0005D4275 /* FinBoxLending.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FinBoxLending.docc; sourceTree = "<group>"; };
@@ -81,7 +88,7 @@
 		6D8CBA872B0B6573005D4275 /* SessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRequest.swift; sourceTree = "<group>"; };
 		6D8CBA892B0B67F1005D4275 /* LendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendingView.swift; sourceTree = "<group>"; };
 		6D8CBA8B2B0B6966005D4275 /* FinBoxWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxWebView.swift; sourceTree = "<group>"; };
-		6D8CBA8F2B0B6BB8005D4275 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		6D8CBA8F2B0B6BB8005D4275 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		6D8CBA952B0B6EDE005D4275 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8CBA972B0B6EDE005D4275 /* SampleAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppApp.swift; sourceTree = "<group>"; };
 		6D8CBA992B0B6EDE005D4275 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +126,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D6031EF2B2C59F200818314 /* enums */ = {
+			isa = PBXGroup;
+			children = (
+				6D6031F02B2C5A0600818314 /* LendingEnvironment.swift */,
+			);
+			path = enums;
+			sourceTree = "<group>";
+		};
+		6D6031F22B2C5E0200818314 /* environments */ = {
+			isa = PBXGroup;
+			children = (
+				6D6031EF2B2C59F200818314 /* enums */,
+				6D6031F32B2C5E1200818314 /* EnvironmentManager.swift */,
+			);
+			path = environments;
+			sourceTree = "<group>";
+		};
 		6D8CBA512B0A84B0005D4275 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +170,8 @@
 		6D8CBA5D2B0A84B0005D4275 /* FinBoxLending */ = {
 			isa = PBXGroup;
 			children = (
+				6D6031F22B2C5E0200818314 /* environments */,
+				6D49844B2B20BC3E0021431C /* Info.plist */,
 				6D8CBAA32B0BCB86005D4275 /* network */,
 				6D8CBA8E2B0B6B3F005D4275 /* web */,
 				6D8CBA8D2B0B6B34005D4275 /* utils */,
@@ -208,6 +234,7 @@
 				6D8CBAA62B0CB538005D4275 /* SessionResponse.swift */,
 				6D8CBAA82B0CB5DA005D4275 /* SessionData.swift */,
 				3729CB4D2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift */,
+				3709B7D32B14907D00052CB3 /* WebEventResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -215,7 +242,6 @@
 		6D8CBA8D2B0B6B34005D4275 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				6D8CBA8F2B0B6BB8005D4275 /* Utils.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -251,6 +277,7 @@
 		6D8CBAA32B0BCB86005D4275 /* network */ = {
 			isa = PBXGroup;
 			children = (
+				6D8CBA8F2B0B6BB8005D4275 /* NetworkUtils.swift */,
 				6D8CBAA42B0BCB99005D4275 /* APIService.swift */,
 			);
 			path = network;
@@ -405,19 +432,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D8CBA8A2B0B67F1005D4275 /* LendingView.swift in Sources */,
+				3709B7D42B14907D00052CB3 /* WebEventResponse.swift in Sources */,
 				6D8CBA602B0A84B0005D4275 /* FinBoxLending.docc in Sources */,
 				6D8CBA882B0B6573005D4275 /* SessionRequest.swift in Sources */,
 				6D8CBAA72B0CB538005D4275 /* SessionResponse.swift in Sources */,
 				6D8CBA832B0B4F88005D4275 /* SessionViewModel.swift in Sources */,
 				6D8CBAA52B0BCB99005D4275 /* APIService.swift in Sources */,
 				6D8CBA7A2B0A860A005D4275 /* FinBoxLending.swift in Sources */,
-				6D8CBA902B0B6BB8005D4275 /* Utils.swift in Sources */,
+				6D8CBA902B0B6BB8005D4275 /* NetworkUtils.swift in Sources */,
+				6D6031F12B2C5A0600818314 /* LendingEnvironment.swift in Sources */,
 				3729CB4E2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift in Sources */,
 				6D8CBA8C2B0B6966005D4275 /* FinBoxWebView.swift in Sources */,
 				6D8CBA7C2B0A8BE0005D4275 /* FinBoxLendingPref.swift in Sources */,
 				6D8CBAA92B0CB5DA005D4275 /* SessionData.swift in Sources */,
 				3729CB502B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift in Sources */,
 				6D8CBA7F2B0A8CE5005D4275 /* Constants.swift in Sources */,
+				6D6031F42B2C5E1200818314 /* EnvironmentManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -567,7 +597,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -592,8 +622,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinBoxLending/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need Camera For User Verification";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need Location For User Verification";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -624,8 +658,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinBoxLending/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need Camera For User Verification";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need Location For User Verification";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -683,9 +721,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 46F33UJL5U;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)/**";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera permission for User KYC";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need Location For User Verification";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -712,9 +753,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 46F33UJL5U;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)/**";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera permission for User KYC";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need Location For User Verification";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

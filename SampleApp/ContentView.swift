@@ -7,6 +7,9 @@
 
 import SwiftUI
 import FinBoxLending
+import UIKit
+import WebKit
+
 
 struct ContentView: View {
     
@@ -33,10 +36,12 @@ struct ContentView: View {
     
     func startLending() -> some View {
         let _ = FinBoxLending.Builder()
-            .apiKey(key: "f078b4d0-d171-4ed9-a1ce-c02134213b6c")
-            .customerID(id: "demo_lender_user_11221538")
-            .userToken(token: "oEuuQupgXPgGWeWSWKKBNePmXfmpcGmcIAeNCnTaYQHzOLJHFUXBPeMTHOQhOrve")
-            .environment(env: "UAT")
+//            .apiKey(key: "iUJT1sxksi5ipCye69OTf3b8FCsQlYgl9J6SXRFY") // UAT - IIFL - PL
+//            .apiKey(key: "sni196oD2W4iM9CO7RuKk105wLDkkEQ9mDxgj0Gh")
+            .apiKey(key: "TGCNfiXhYBSaPiRFwXveljpcCkgJihPbbtVElQxW")
+            .customerID(id: "ABCD80575")
+            .userToken(token: "QELthnsBwjVnmVJAdAzsZQeIKGHvlXidqmLdQOILSmJriNnhFnmeJxTWaPJhpwxz")
+            .environment(env: "DEV1")
             .build()
         
         return LendingView() {
