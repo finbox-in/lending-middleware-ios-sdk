@@ -1,6 +1,6 @@
 #  FinBox Lending iOS SDK
 
-## 0.0.8
+## 0.0.9
 
 Enable multiple environments
 Update Cocopods Source
