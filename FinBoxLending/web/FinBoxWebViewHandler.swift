@@ -45,7 +45,13 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
         let response = try JSONDecoder().decode(WebEventResponse.self, from: jsonData)
         debugPrint("Json Data Status", response.status ?? "Status is empty")
         
-        try setCallbackPayload(eventResponse: getEventResponse(webEventResponse: response))
+        if let eventResponse = try getEventResponse(webEventResponse: response) {
+            if (eventResponse.code != nil) {
+                self.lendingResult(eventResponse)
+            }
+        } else {
+            
+        }
     }
     
     // Takes event response in string format and return it as a struct
@@ -91,8 +97,8 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
                 
                 // Convert the web response event to struct
                 let jsonData = try JSONSerialization.data(withJSONObject: jsonObjectData)
-                let response = try JSONDecoder().decode(FinBoxJourneyResult.self, from: jsonData)
-                debugPrint("Obj received: \(response)")
+                finBoxJourneyResult = try JSONDecoder().decode(FinBoxJourneyResult.self, from: jsonData)
+                debugPrint("Journey Result received", finBoxJourneyResult)
                 
             case FINBOX_LENDING_OTP_LIMIT_EXCEEDED:
                 debugPrint("Lending OTP Limit Exceeded")
@@ -101,7 +107,6 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
                 
             case FINBOX_LENDING_LOCATION_PERMISSION:
                 debugPrint("Lending Location Permission Requested")
-                finBoxJourneyResult.code = "LENDING_LOCATION_PERMISSION"
                 requestLocation()
                 
             case FINBOX_LENDING_SHOW_PROFILE_ICON:
@@ -119,17 +124,7 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
         // Create the journey result
         return finBoxJourneyResult
     }
-    
-    // Update the callback payload
-    func setCallbackPayload(eventResponse: FinBoxJourneyResult?) {
-        // Generate the callback payload
-        let payload = FinBoxJourneyResult(code: eventResponse?.code, screen: eventResponse?.screen, message: eventResponse?.message)
-        debugPrint("Callback Code", payload.code ?? "Empty Status Code")
-        
-        // Send callback to the View
-        self.lendingResult(payload)
-    }
-    
+
     func requestLocation() {
         debugPrint("Requesting Location")
         // Check if location services are enabled

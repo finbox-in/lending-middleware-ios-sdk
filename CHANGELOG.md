@@ -1,5 +1,10 @@
 #  FinBox Lending iOS SDK
 
+## 0.1.0
+
+Update Callbacks
+
+
 ## 0.0.9
 
 Enable multiple environments
