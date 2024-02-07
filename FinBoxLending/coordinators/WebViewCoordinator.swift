@@ -7,7 +7,6 @@
 
 import Foundation
 import WebKit
-import PDFKit
 
 /// WebViewCoordinator is a class responsible for coordinating interactions between the WebView and other components.
 /**
@@ -123,36 +122,10 @@ class WebViewCoordinator: NSObject, WKNavigationDelegate, URLSessionDownloadDele
                     debugPrint("Failed to decode data URL")
                     return
                 }
-                self.saveBinaryStringAsPDF(binaryStringData: data.base64EncodedString(), fileName: getFileName())
+                saveBinaryStringAsPDF(binaryStringData: data.base64EncodedString(), fileName: getFileName())
             case .failure(let error):
                 debugPrint("Failed with: \(error)")
             }
-        }
-    }
-    
-    /// Saves the binary string in a PDF file
-    func saveBinaryStringAsPDF(binaryStringData: String, fileName: String) {
-        // Convert the binary string to Data
-        guard let binaryData = Data(base64Encoded: binaryStringData, options: .ignoreUnknownCharacters) else {
-            debugPrint("Failed to convert binary string to Data")
-            return
-        }
-
-        // Initialize a PDFDocument with the binary data
-        guard let pdfDocument = PDFDocument(data: binaryData) else {
-            debugPrint("Failed to initialize PDFDocument")
-            return
-        }
-
-        // Specify the file URL where you want to save the PDF
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let fileURL = documentsDirectory.appendingPathComponent(fileName)
-
-        // Write the PDF to the file
-        if pdfDocument.write(to: fileURL) {
-            debugPrint("Write Successful")
-        } else {
-            debugPrint("Write UnSuccessful")
         }
     }
     
