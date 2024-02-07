@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 import WebKit
-import PDFKit
 
 struct FinBoxWebView: UIViewRepresentable {
     
