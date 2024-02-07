@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import WebKit
+import PDFKit
 
 struct FinBoxWebView: UIViewRepresentable {
     
@@ -21,13 +22,13 @@ struct FinBoxWebView: UIViewRepresentable {
         let config = WKWebViewConfiguration()
         // Create a user controller
         config.userContentController = WKUserContentController()
-
+        
         // Opens camera in image mode
         config.allowsInlineMediaPlayback = true
-
+        
         // Checks whether media playback requires user action (like a tap) in order to start
         config.mediaTypesRequiringUserActionForPlayback = []
-
+        
         let webView = WKWebView(frame: UIScreen.main.bounds, configuration: config)
         config.userContentController.add(
             FinBoxWebViewHandler(
@@ -35,6 +36,8 @@ struct FinBoxWebView: UIViewRepresentable {
                 webView: webView
             ),
             name: "FbxLendingiOS")
+        
+        webView.navigationDelegate = context.coordinator
         
         return webView
     }
@@ -47,6 +50,9 @@ struct FinBoxWebView: UIViewRepresentable {
         uiView.load(NetworkUtils.getRequest(urlString: sessionURL))
     }
     
+    func makeCoordinator() -> WebViewCoordinator {
+        WebViewCoordinator()
+    }
 }
 
 struct FinBoxWebView_Previews: PreviewProvider {
