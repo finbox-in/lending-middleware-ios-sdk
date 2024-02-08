@@ -23,10 +23,8 @@ class WebViewCoordinator: NSObject, WKNavigationDelegate, URLSessionDownloadDele
     ///    - decisionHandler: A closure that must be called to indicate whether the navigation action should be allowed or canceled.
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 
-        debugPrint("XXXX URL Intercepted", navigationAction.request.url)
         // Check if the item should be downloaded
         if navigationAction.shouldPerformDownload {
-            debugPrint("XXXX URL Downloadable")
             // Get the URL
             if let url = navigationAction.request.url {
                 DispatchQueue.main.async {
@@ -50,7 +48,6 @@ class WebViewCoordinator: NSObject, WKNavigationDelegate, URLSessionDownloadDele
             // Save the file
             getContentFromBlobURL(blobURL: resourceURL, webView: webView)
         } else {
-            debugPrint("Non blob file", resourceURL)
             // Handle non-blob URLs (e.g., regular http/https URLs)
             guard let url = URL(string: resourceURL) else { return }
             let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
@@ -68,6 +65,7 @@ class WebViewCoordinator: NSObject, WKNavigationDelegate, URLSessionDownloadDele
         
         guard let url = downloadTask.originalRequest?.url else { return }
         
+        // Get the file name
         let fileName = getFileName()
         
         // Get the documents directory URL
