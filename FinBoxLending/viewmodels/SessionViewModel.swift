@@ -9,16 +9,17 @@ import Foundation
 
 class SessionViewModel: ObservableObject {
     
-    @Published var sessionUrl: String?
+    @Published var sessionResult: SessionResult?
     var sessionFetched = false
     
     func fetchSession() {
-        self.sessionFetched = true
+        debugPrint("Fetching Session")
         APIService.shared.fetchSession { result in
+            self.sessionFetched = true
             debugPrint("Received Session in viewmodel")
             DispatchQueue.main.async {
                 // Update sessionUrl when the network call completes
-                self.sessionUrl = result
+                self.sessionResult = result
             }
         }
     }

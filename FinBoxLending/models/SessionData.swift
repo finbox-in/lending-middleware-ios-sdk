@@ -8,5 +8,5 @@
 import Foundation
 
 struct SessionData: Codable {
-    let url: String
+    let url: String?
 }

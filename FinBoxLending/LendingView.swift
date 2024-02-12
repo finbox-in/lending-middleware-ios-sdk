@@ -21,8 +21,14 @@ public struct LendingView: View {
     public var body: some View {
         if viewModel.sessionFetched {
             VStack {
-                if viewModel.sessionUrl != nil {
-                    FinBoxWebView(urlString: viewModel.sessionUrl, lendingResult: lendingResult)
+                if viewModel.sessionResult?.error == nil {
+                    if viewModel.sessionResult?.sessionURL != nil {
+                        FinBoxWebView(urlString: viewModel.sessionResult?.sessionURL, lendingResult: lendingResult)
+                    } else {
+                        handleError(error: "Invalid session url")
+                    }
+                } else {
+                    handleError(error: viewModel.sessionResult?.error ?? "Unknown Error")
                 }
             }.onAppear() {
                 debugPrint("Session Fetched", viewModel.sessionFetched)
@@ -36,20 +42,10 @@ public struct LendingView: View {
             }
         }
     }
-
-}
-
-struct LendingView_Previews: PreviewProvider {
-    static var previews: some View {
-        let _ = FinBoxLending.Builder()
-            .apiKey(key: "f078b4d0-d171-4ed9-a1ce-c02134213b6c")
-            .customerID(id: "demo_lender_user_11281543")
-            .userToken(token: "RmvdboEyIfgpCwGlHinwWhhCTnQgQiwIkxLyXosjGZBqLOFDcDfDFcdhxTviyqOc")
-            .environment(env: "UAT")
-            .build()
-        LendingView() {
-            payload in
-            debugPrint("Status Code", payload.code ?? "Status Code is empty")
-        }
+    
+    func handleError(error: String) -> some View {
+        lendingResult(FinBoxJourneyResult(code: "", screen: "", message: error))
+        return Text("\(String(describing: error))")
     }
+
 }
