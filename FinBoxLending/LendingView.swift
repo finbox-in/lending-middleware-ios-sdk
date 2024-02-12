@@ -19,21 +19,22 @@ public struct LendingView: View {
     }
     
     public var body: some View {
-        VStack {
-            if (viewModel.sessionUrl != nil) {
-                // Load the webpage
-                FinBoxWebView(urlString: viewModel.sessionUrl, lendingResult: lendingResult)
-            } else {
-                if #available(iOS 14, *) {
-                    // Show progress
-                    ProgressView()
-                } else {
-                    // Progress View is not available
+        if viewModel.sessionFetched {
+            VStack {
+                if viewModel.sessionUrl != nil {
+                    FinBoxWebView(urlString: viewModel.sessionUrl, lendingResult: lendingResult)
                 }
+            }.onAppear() {
+                debugPrint("Session Fetched", viewModel.sessionFetched)
             }
-        }.onAppear(perform: {
-            viewModel.fetchSession()
-        })
+        } else {
+            VStack {
+                ProgressView()
+            }.onAppear() {
+                debugPrint("Fetching Session")
+                viewModel.fetchSession()
+            }
+        }
     }
 
 }
