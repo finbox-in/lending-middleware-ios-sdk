@@ -14,6 +14,8 @@ public struct LendingView: View {
     // Result Function
     public let lendingResult : ((FinBoxJourneyResult) -> Void)
     
+    @Environment(\.dismiss) private var dismiss
+    
     public init(lendingResult: @escaping (FinBoxJourneyResult) -> Void) {
         self.lendingResult = lendingResult
     }
@@ -45,7 +47,8 @@ public struct LendingView: View {
     
     func handleError(error: String) -> some View {
         lendingResult(FinBoxJourneyResult(code: "", screen: "", message: error))
-        return Text("\(String(describing: error))")
+        dismiss()
+        return EmptyView()
     }
 
 }
