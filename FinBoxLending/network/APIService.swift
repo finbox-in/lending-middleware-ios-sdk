@@ -10,6 +10,7 @@ import Foundation
 struct APIService {
     
     static let shared = APIService()
+    private static var callbackSent = CallbackSent()
     
     /// Constructs the URL for the session.
     /// - Returns: The URL for the session, formed by combining the `BASE_URL` and `END_POINT`
@@ -179,6 +180,15 @@ struct APIService {
     ///   - completion: A closure to be executed when the asynchronous operation completes. It takes a `String` parameter.
     ///   - result: The result to be passed to the completion closure.
     func sendCallback(completion: @escaping (SessionResult) -> Void, result: SessionResult) {
+        // Check if the callback has already been sent
+        guard !APIService.callbackSent.status else {
+            return
+        }
+        
+        // Update the sent status
+        APIService.callbackSent.updateStatus()
+        
+        // Send callback
         DispatchQueue.global().asyncAfter(deadline: .now()) {
             completion(result)
         }
