@@ -71,7 +71,7 @@ struct APIService {
                 // Convert the response to object
                 sessionResponse = try JSONDecoder().decode(SessionResponse.self, from: data)
             } catch {
-                self.handleClientError(completion: completion, error: error)
+                self.handleError(completion: completion, error: "JSON Error")
             }
             
             // Handle the HTTP response
@@ -142,25 +142,36 @@ struct APIService {
                               hidePoweredBy: userPref.hidePoweredBy, sdkType: "hybrid:ios:0.0.1")
     }
     
+    /// Creates SessionResult for Callback
+    /// - Parameters
+    ///     - error (Optional) : String error
+    ///     - sessionURL (Optional): String URL
+    /// - Returns
+    ///     - SessionResult object with only error or sessionURL
+    func getResult(error: String?, sessionURL: String?) -> SessionResult {
+        if (error != nil && sessionURL == nil) {
+            return SessionResult(error: error, sessionURL: nil)
+        } else {
+            return SessionResult(error: nil, sessionURL: sessionURL)
+        }
+    }
+    
     /// Handles client errors
     func handleClientError(completion: @escaping (SessionResult) -> Void, error: Any) {
         debugPrint("Response Error Client: \(error as Any)")
-        let result = SessionResult(error: String(describing: error), sessionURL: nil)
-        sendCallback(completion: completion, result: result)
+        sendCallback(completion: completion, result: getResult(error: String(describing: error), sessionURL: nil))
     }
     
     /// Handles server errors
     func handleServerError(completion: @escaping (SessionResult) -> Void, error: Any) {
         debugPrint("Response Error Server: \(String(describing: error))")
-        let result = SessionResult(error: String(describing: error), sessionURL: nil)
-        sendCallback(completion: completion, result: result)
+        sendCallback(completion: completion, result: getResult(error: String(describing: error), sessionURL: nil))
     }
     
     /// Handles generic errors
     func handleError(completion: @escaping (SessionResult) -> Void, error: Any) {
         debugPrint("Response Error Generic: \(String(describing: error))")
-        let result = SessionResult(error: String(describing: error), sessionURL: nil)
-        sendCallback(completion: completion, result: result)
+        sendCallback(completion: completion, result: getResult(error: String(describing: error), sessionURL: nil))
     }
     
     /// Sends an asynchronous callback after a (slight-possible) delay.
