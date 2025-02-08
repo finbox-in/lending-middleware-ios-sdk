@@ -1,0 +1,11 @@
+framework module FinBoxLending {
+  umbrella header "FinBoxLending.h"
+  export *
+
+  module * { export * }
+}
+
+module FinBoxLending.Swift {
+  header "FinBoxLending-Swift.h"
+  requires objc
+}

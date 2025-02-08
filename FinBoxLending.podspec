@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "FinBoxLending"
-  spec.version      = "0.2.1"
+  spec.version      = "0.2.2"
   spec.summary      = "FinBoxLending IOS SDK to enable Lending journey for IOS devices"
 
   # This description is used to generate tags and improve search results.
@@ -65,7 +65,7 @@ FinBox Lending allows users to submit their bank account statements, kyc details
   #
 
   spec.platform     = :ios
-  spec.platform     = :ios, "13.0"
+  spec.platform     = :ios, "15.0"
   spec.swift_versions = ['4', '5']
 
   #  When using multiple platforms

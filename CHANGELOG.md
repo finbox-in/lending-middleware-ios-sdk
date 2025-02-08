@@ -1,9 +1,10 @@
 #  FinBox Lending iOS SDK
 
-## 0.2.1
+## 0.2.2
 
 Add ABCD Endpoints
 Add Campaign Params
+Restrict to 15.0 Swift
 
 
 ## 0.1.0
