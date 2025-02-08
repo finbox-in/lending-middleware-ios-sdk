@@ -10,6 +10,9 @@
 		3709B7D42B14907D00052CB3 /* WebEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3709B7D32B14907D00052CB3 /* WebEventResponse.swift */; };
 		3729CB4E2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CB4D2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift */; };
 		3729CB502B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CB4F2B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift */; };
+		375E78FA2D56FDE700F03DFC /* SessionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375E78F92D56FDE700F03DFC /* SessionResult.swift */; };
+		3797420F2B74DDFA00C9DF36 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3797420D2B74DDFA00C9DF36 /* FileUtil.swift */; };
+		379742102B74DDFA00C9DF36 /* WebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3797420E2B74DDFA00C9DF36 /* WebViewCoordinator.swift */; };
 		6D6031F12B2C5A0600818314 /* LendingEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6031F02B2C5A0600818314 /* LendingEnvironment.swift */; };
 		6D6031F42B2C5E1200818314 /* EnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6031F32B2C5E1200818314 /* EnvironmentManager.swift */; };
 		6D8CBA602B0A84B0005D4275 /* FinBoxLending.docc in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CBA5F2B0A84B0005D4275 /* FinBoxLending.docc */; };
@@ -71,6 +74,9 @@
 		3729CB4C2B0DECDB00E0D9C8 /* FinBoxLending.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FinBoxLending.podspec; sourceTree = "<group>"; };
 		3729CB4D2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinBoxJourneyResult.swift; sourceTree = "<group>"; };
 		3729CB4F2B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinBoxWebViewHandler.swift; sourceTree = "<group>"; };
+		375E78F92D56FDE700F03DFC /* SessionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResult.swift; sourceTree = "<group>"; };
+		3797420D2B74DDFA00C9DF36 /* FileUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
+		3797420E2B74DDFA00C9DF36 /* WebViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewCoordinator.swift; sourceTree = "<group>"; };
 		6D49844B2B20BC3E0021431C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6D6031F02B2C5A0600818314 /* LendingEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendingEnvironment.swift; sourceTree = "<group>"; };
 		6D6031F32B2C5E1200818314 /* EnvironmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentManager.swift; sourceTree = "<group>"; };
@@ -126,6 +132,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3797420C2B74DDFA00C9DF36 /* coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				3797420D2B74DDFA00C9DF36 /* FileUtil.swift */,
+				3797420E2B74DDFA00C9DF36 /* WebViewCoordinator.swift */,
+			);
+			path = coordinators;
+			sourceTree = "<group>";
+		};
 		6D6031EF2B2C59F200818314 /* enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +185,7 @@
 		6D8CBA5D2B0A84B0005D4275 /* FinBoxLending */ = {
 			isa = PBXGroup;
 			children = (
+				3797420C2B74DDFA00C9DF36 /* coordinators */,
 				6D6031F22B2C5E0200818314 /* environments */,
 				6D49844B2B20BC3E0021431C /* Info.plist */,
 				6D8CBAA32B0BCB86005D4275 /* network */,
@@ -230,6 +246,7 @@
 		6D8CBA862B0B6565005D4275 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				375E78F92D56FDE700F03DFC /* SessionResult.swift */,
 				6D8CBA872B0B6573005D4275 /* SessionRequest.swift */,
 				6D8CBAA62B0CB538005D4275 /* SessionResponse.swift */,
 				6D8CBAA82B0CB5DA005D4275 /* SessionData.swift */,
@@ -431,10 +448,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				379742102B74DDFA00C9DF36 /* WebViewCoordinator.swift in Sources */,
 				6D8CBA8A2B0B67F1005D4275 /* LendingView.swift in Sources */,
 				3709B7D42B14907D00052CB3 /* WebEventResponse.swift in Sources */,
 				6D8CBA602B0A84B0005D4275 /* FinBoxLending.docc in Sources */,
 				6D8CBA882B0B6573005D4275 /* SessionRequest.swift in Sources */,
+				375E78FA2D56FDE700F03DFC /* SessionResult.swift in Sources */,
 				6D8CBAA72B0CB538005D4275 /* SessionResponse.swift in Sources */,
 				6D8CBA832B0B4F88005D4275 /* SessionViewModel.swift in Sources */,
 				6D8CBAA52B0BCB99005D4275 /* APIService.swift in Sources */,
@@ -446,6 +465,7 @@
 				6D8CBA7C2B0A8BE0005D4275 /* FinBoxLendingPref.swift in Sources */,
 				6D8CBAA92B0CB5DA005D4275 /* SessionData.swift in Sources */,
 				3729CB502B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift in Sources */,
+				3797420F2B74DDFA00C9DF36 /* FileUtil.swift in Sources */,
 				6D8CBA7F2B0A8CE5005D4275 /* Constants.swift in Sources */,
 				6D6031F42B2C5E1200818314 /* EnvironmentManager.swift in Sources */,
 			);

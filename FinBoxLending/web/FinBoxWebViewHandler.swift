@@ -29,7 +29,7 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
         do {
             try parseMessageBody(message: message.body)
         } catch {
-            print("Json Decode Error")
+            debugPrint("Json Decode Error")
         }
         
     }
@@ -203,9 +203,9 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
         let script = "setLocation('${location?.coordinate.latitude}','${location?.coordinate.longitude}','${location?.coordinate.altitude}','${location?.coordinate.accuracy}')"
         webView?.evaluateJavaScript(script, completionHandler: { (result, error) in
             if let error = error {
-                print("Error executing JS: \(error)")
+                debugPrint("Error executing JS: \(error)")
             } else {
-                print("JS executed successfully")
+                debugPrint("JS executed successfully")
             }
         })
     }
