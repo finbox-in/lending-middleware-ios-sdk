@@ -45,10 +45,10 @@ class EnvironmentManager {
 
             if envResult == "prod" { return FINBOX_LENDING_PROD_BASE_URL }
 
-            if envResult == "uat" { print("UAT") }
+            if envResult == "uat" { debugPrint("ENV Result UAT") }
 
             if envResult == "dev" {
-                print("DEV")
+                debugPrint("ENV Result DEV")
                 #if DEBUG
                 // Do Nothing
                 #else
@@ -64,6 +64,8 @@ class EnvironmentManager {
                 // Combine results
                 url = "https://lending\(envResult)\(regionResult).finbox.in"
             }
+        } else if (environment.lowercased() == "abcdlos") {
+            url = "https://\(environment.lowercased())-backend.lending.finbox.in"
         }
 
         return url
