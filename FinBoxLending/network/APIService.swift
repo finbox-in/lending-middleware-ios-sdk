@@ -139,7 +139,19 @@ struct APIService {
         return SessionRequest(customerID: customerID, withdrawAmount: userPref.creditLineAmount,
                               redirectURL: nil, transactionID: userPref.creditLineTransactionID, source: nil,
                               hideClose: false, hidefaq: true, hideback: false, hideNav: true,
-                              hidePoweredBy: userPref.hidePoweredBy, sdkType: "hybrid:ios:0.0.1")
+                              hidePoweredBy: userPref.hidePoweredBy, sdkType: "hybrid:ios:0.0.2",
+                              location: nil,
+                              campaignParams: CampaignParams(utmTerm: userPref.utmTerm,
+                                                             utmSource: userPref.utmSource,
+                                                             utmContent: userPref.utmContent,
+                                                             utmMedium: userPref.utmMedium,
+                                                             utmCampaign: userPref.utmCampaign,
+                                                             utmPartnerName: userPref.utmPartnerName,
+                                                             utmPartnerMedium: userPref.utmPartnerMedium,
+                                                             appsflyerId: userPref.appsflyerId,
+                                                             idfa: userPref.idfa,
+                                                             advertisingId: userPref.advertisingId)
+        )
     }
     
     /// Handles client errors

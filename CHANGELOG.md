@@ -1,5 +1,11 @@
 #  FinBox Lending iOS SDK
 
+## 0.2.0
+
+Add ABCD Endpoints
+Add Campaign Params
+
+
 ## 0.1.0
 
 Update Callbacks

@@ -84,4 +84,95 @@ class FinBoxLendingPref {
         }
     }
     
+    var utmTerm: String? {
+        get {
+            return userDefaults.object(forKey: FINBOX_LENDING_HIDE_POWERED_BY) as? String ?? nil
+        }
+        set {
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_HIDE_POWERED_BY)
+        }
+    }
+    
+    var utmSource: String? {
+        get {
+            return userDefaults.object(forKey: FINBOX_LENDING_UTM_SOURCE) as? String ?? nil
+        }
+        set {
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_UTM_SOURCE)
+        }
+    }
+    
+    
+    var utmContent: String? {
+        get {
+            return userDefaults.object(forKey: FINBOX_LENDING_UTM_CONTENT) as? String ?? nil
+        }
+        set {
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_UTM_CONTENT)
+        }
+    }
+    
+    var utmMedium: String? {
+        get {
+            return userDefaults.object(forKey: FINBOX_LENDING_UTM_MEDIUM) as? String ?? nil
+        }
+        set {
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_UTM_MEDIUM)
+        }
+    }
+    
+    var utmCampaign: String? {
+        get {
+            return userDefaults.object(forKey: FINBOX_LENDING_UTM_CAMPAIGN) as? String ?? nil
+        }
+        set {
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_UTM_CAMPAIGN)
+        }
+    }
+
+    var utmPartnerName: String? {
+        get {
+            return userDefaults.object(forKey: FINBOX_LENDING_UTM_PARTNER_NAME) as? String ?? nil
+        }
+        set {
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_UTM_PARTNER_NAME)
+        }
+    }
+    
+    var utmPartnerMedium: String? {
+        get {
+            return userDefaults.object(forKey: FINBOX_LENDING_UTM_PARTNER_MEDIUM) as? String ?? nil
+        }
+        set {
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_UTM_PARTNER_MEDIUM)
+        }
+    }
+    
+    var appsflyerId: String? {
+        get {
+            return userDefaults.object(forKey: FINBOX_LENDING_APPS_FLYER_ID) as? String ?? nil
+        }
+        set {
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_APPS_FLYER_ID)
+        }
+    }
+    
+    var idfa: String? {
+        get {
+            return userDefaults.object(forKey: FINBOX_LENDING_ADVERTISING_ID) as? String ?? nil
+        }
+        set {
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_ADVERTISING_ID)
+        }
+    }
+    
+    var advertisingId: String? {
+        get {
+            return userDefaults.object(forKey: FINBOX_LENDING_IDFA) as? String ?? nil
+        }
+        set {
+            userDefaults.set(newValue, forKey: FINBOX_LENDING_IDFA)
+        }
+    }
+    
 }
