@@ -1,0 +1,16 @@
+{
+  "source": "/Users/srikar/Work/Ios/WebLending/FinBoxLending/LendingView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%@",
+        "location": {
+          "startingColumn": 21,
+          "startingLine": 48
+        }
+      }
+    ]
+  },
+  "version": 1
+}

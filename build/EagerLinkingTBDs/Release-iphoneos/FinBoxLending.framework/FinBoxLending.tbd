@@ -1,0 +1,140 @@
+{
+  "main_library": {
+    "exported_symbols": [
+      {
+        "data": {
+          "global": [
+            "_$s13FinBoxLendingAAC7BuilderC7utmTermAeDSS_tFTq",
+            "_$s13FinBoxLending0aB13JourneyResultV4codeSSSgvs",
+            "_$s13FinBoxLendingAAC7BuilderC9dcEnabled7enabledADSb_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderC11appsflyerIdAeDSS_tFTq",
+            "_$s13FinBoxLendingAAC7BuilderC11utmCampaignAeDSS_tFTj",
+            "_$s13FinBoxLending0C4ViewV4bodyQrvg",
+            "_$s13FinBoxLendingAAC7BuilderCN",
+            "_$s13FinBoxLendingAACMa",
+            "_$s13FinBoxLendingAACN",
+            "_$s13FinBoxLending0C11EnvironmentOMn",
+            "_$s13FinBoxLending0C4ViewVMn",
+            "_$s13FinBoxLendingAAC7BuilderCMo",
+            "_$s13FinBoxLending0C11EnvironmentO3UATyA2CmFWC",
+            "_$s13FinBoxLending0C4ViewV13lendingResultACyAA0ab7JourneyF0Vc_tcfC",
+            "_$s13FinBoxLending0C11EnvironmentO4PRODyA2CmFWC",
+            "_$s13FinBoxLendingAAC7BuilderC10customerID2idADSS_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderC16utmPartnerMediumAeDSS_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderC10utmContentAeDSS_tFTq",
+            "_FinBoxLendingVersionString",
+            "_$s13FinBoxLendingAAC7BuilderC4idfaAeDSS_tFTq",
+            "_$s13FinBoxLendingAAC7BuilderC10utmContentAeDSS_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderC23creditLineTransactionID011transactionH0ADSS_tFTq",
+            "_$s13FinBoxLendingAAC7BuilderC11showToolBar0E0ADSb_tFTq",
+            "_$s13FinBoxLendingAAC7BuilderC13hidePoweredBy0E0ADSb_tFTj",
+            "_$s13FinBoxLending0aB13JourneyResultV6screenSSSgvg",
+            "_$s13FinBoxLendingAAC7BuilderC13advertisingIdAeDSS_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderC9utmMediumAeDSS_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderC15savePreferences10customerID6apiKey9userToken11environment16creditLineAmount0no11TransactionH011showToolBar13hidePoweredBy9dcEnabled7utmTerm0Z6Source0Z7Content0Z6Medium0Z8Campaign0Z11PartnerName0Z13PartnerMedium11appsflyerId4idfa13advertisingIdySS_S3SSfSgSSSgS3bA10ZtFTj",
+            "_$s13FinBoxLendingAAC7BuilderCMa",
+            "_$s13FinBoxLending0aB13JourneyResultV4fromACs7Decoder_p_tKcfC",
+            "_$s13FinBoxLending0aB13JourneyResultV6encode2toys7Encoder_p_tKF",
+            "_$s13FinBoxLendingAAC7BuilderC14utmPartnerNameAeDSS_tFTq",
+            "_$s13FinBoxLendingAACMm",
+            "_$s13FinBoxLendingAAC7BuilderCADycfc",
+            "_$s13FinBoxLendingAAC7BuilderC6apiKey3keyADSS_tFTj",
+            "_$s13FinBoxLending0C11EnvironmentON",
+            "_$s13FinBoxLendingAAC7BuilderC5buildAByFTq",
+            "_$s13FinBoxLendingAAC7BuilderC5buildAByFTj",
+            "_$s13FinBoxLending0C11EnvironmentOMa",
+            "_$s13FinBoxLendingAACMu",
+            "_$s13FinBoxLendingAACfD",
+            "_$s13FinBoxLendingAAC7BuilderC16creditLineAmount6amountADSf_tFTq",
+            "_$s13FinBoxLendingAAC7BuilderC9userToken5tokenADSS_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderCMn",
+            "_$s13FinBoxLending0aB13JourneyResultV6screenSSSgvM",
+            "_$s13FinBoxLendingAAC7BuilderCMm",
+            "_$s13FinBoxLendingAAC7BuilderC9utmMediumAeDSS_tFTq",
+            "_$s13FinBoxLending0aB13JourneyResultV7messageSSSgvpMV",
+            "_$s13FinBoxLending0aB13JourneyResultV7messageSSSgvg",
+            "_$s13FinBoxLending0aB13JourneyResultV4codeSSSgvpMV",
+            "_$s13FinBoxLendingAAC7BuilderC9utmSourceAeDSS_tFTj",
+            "_$s13FinBoxLending0C11EnvironmentOSQAAMc",
+            "_$s13FinBoxLending0C4ViewVN",
+            "_$s13FinBoxLendingAAC7BuilderCMu",
+            "_$s13FinBoxLendingAAC7BuilderCADycfCTj",
+            "_$s13FinBoxLending0aB13JourneyResultV6screenSSSgvpMV",
+            "_$s13FinBoxLending0C4ViewV4bodyQrvpQOMQ",
+            "_$s13FinBoxLendingAAC7BuilderC9utmSourceAeDSS_tFTq",
+            "_$s13FinBoxLending0C4ViewV7SwiftUI0D0AAMc",
+            "_$s13FinBoxLending0aB13JourneyResultV4codeSSSgvM",
+            "_$s13FinBoxLendingAACfd",
+            "_$s13FinBoxLending0aB13JourneyResultVSEAAMc",
+            "_$s13FinBoxLendingAAC7BuilderC4idfaAeDSS_tFTj",
+            "_$s13FinBoxLending0aB13JourneyResultVMa",
+            "_$s13FinBoxLending0C4ViewV13lendingResultyyAA0ab7JourneyF0VcvpMV",
+            "_$s13FinBoxLending0C4ViewVMa",
+            "_$s13FinBoxLendingAAC7BuilderC16utmPartnerMediumAeDSS_tFTq",
+            "_$s13FinBoxLending0aB13JourneyResultVSeAAMc",
+            "_$s13FinBoxLendingAAC7BuilderC7utmTermAeDSS_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderC23creditLineTransactionID011transactionH0ADSS_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderC11environment3envADSS_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderC11utmCampaignAeDSS_tFTq",
+            "_$s13FinBoxLending0C4ViewV4bodyQrvpMV",
+            "_$s13FinBoxLendingAAC7BuilderC9dcEnabled7enabledADSb_tFTq",
+            "_$s13FinBoxLending0C11EnvironmentO8rawValueSSvg",
+            "_FinBoxLendingVersionNumber",
+            "_$s13FinBoxLending0aB13JourneyResultV4codeSSSgvg",
+            "_$s13FinBoxLendingAAC7BuilderC9userToken5tokenADSS_tFTq",
+            "_$s13FinBoxLending0aB13JourneyResultVMn",
+            "_$s13FinBoxLendingAAC7BuilderC10customerID2idADSS_tFTq",
+            "_$s13FinBoxLending0C11EnvironmentOSYAAMc",
+            "_$s13FinBoxLendingAACMn",
+            "_$s13FinBoxLendingAAC7BuilderC6apiKey3keyADSS_tFTq",
+            "_$s13FinBoxLendingAACMo",
+            "_$s13FinBoxLendingAAC7BuilderC14utmPartnerNameAeDSS_tFTj",
+            "_$s13FinBoxLending0C4ViewV13lendingResultyyAA0ab7JourneyF0Vcvg",
+            "_$s13FinBoxLendingAAC7BuilderC13advertisingIdAeDSS_tFTq",
+            "_$s13FinBoxLending0aB13JourneyResultV7messageSSSgvM",
+            "_$s13FinBoxLending0C11EnvironmentOSHAAMc",
+            "_$s13FinBoxLendingAAC7BuilderC13hidePoweredBy0E0ADSb_tFTq",
+            "_$s13FinBoxLendingAAC7BuilderC16creditLineAmount6amountADSf_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderCADycfC",
+            "_$s13FinBoxLendingAAC7BuilderC11showToolBar0E0ADSb_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderCfd",
+            "_$s13FinBoxLendingAAC7BuilderC11environment3envADSS_tFTq",
+            "_$s13FinBoxLendingAAC7BuilderCADycfCTq",
+            "_$s13FinBoxLending0aB13JourneyResultV7messageSSSgvs",
+            "_$s13FinBoxLendingAAC7BuilderCfD",
+            "_$s13FinBoxLending0C11EnvironmentO8rawValueACSgSS_tcfC",
+            "_$s13FinBoxLending0C11EnvironmentO8rawValueSSvpMV",
+            "_$s13FinBoxLending0aB13JourneyResultVN",
+            "_$s13FinBoxLending0aB13JourneyResultV6screenSSSgvs",
+            "_$s13FinBoxLendingAAC7BuilderC11appsflyerIdAeDSS_tFTj",
+            "_$s13FinBoxLendingAAC7BuilderC15savePreferences10customerID6apiKey9userToken11environment16creditLineAmount0no11TransactionH011showToolBar13hidePoweredBy9dcEnabled7utmTerm0Z6Source0Z7Content0Z6Medium0Z8Campaign0Z11PartnerName0Z13PartnerMedium11appsflyerId4idfa13advertisingIdySS_S3SSfSgSSSgS3bA10ZtFTq"
+          ]
+        }
+      }
+    ],
+    "flags": [
+      {
+        "attributes": [
+          "not_app_extension_safe"
+        ]
+      }
+    ],
+    "install_names": [
+      {
+        "name": "@rpath/FinBoxLending.framework/FinBoxLending"
+      }
+    ],
+    "swift_abi": [
+      {
+        "abi": 7
+      }
+    ],
+    "target_info": [
+      {
+        "min_deployment": "16",
+        "target": "arm64-ios"
+      }
+    ]
+  },
+  "tapi_tbd_version": 5
+}

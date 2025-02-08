@@ -1,0 +1,2436 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "FinBoxLending",
+    "printedName": "FinBoxLending",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LendingView",
+        "printedName": "LendingView",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "lendingResult",
+            "printedName": "lendingResult",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FinBoxLending.FinBoxJourneyResult) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FinBoxJourneyResult",
+                    "printedName": "FinBoxLending.FinBoxJourneyResult",
+                    "usr": "s:13FinBoxLending0aB13JourneyResultV"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13FinBoxLending0C4ViewV13lendingResultyyAA0ab7JourneyF0Vcvp",
+            "mangledName": "$s13FinBoxLending0C4ViewV13lendingResultyyAA0ab7JourneyF0Vcvp",
+            "moduleName": "FinBoxLending",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(FinBoxLending.FinBoxJourneyResult) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FinBoxJourneyResult",
+                        "printedName": "FinBoxLending.FinBoxJourneyResult",
+                        "usr": "s:13FinBoxLending0aB13JourneyResultV"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13FinBoxLending0C4ViewV13lendingResultyyAA0ab7JourneyF0Vcvg",
+                "mangledName": "$s13FinBoxLending0C4ViewV13lendingResultyyAA0ab7JourneyF0Vcvg",
+                "moduleName": "FinBoxLending",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(lendingResult:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LendingView",
+                "printedName": "FinBoxLending.LendingView",
+                "usr": "s:13FinBoxLending0C4ViewV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FinBoxLending.FinBoxJourneyResult) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FinBoxJourneyResult",
+                    "printedName": "FinBoxLending.FinBoxJourneyResult",
+                    "usr": "s:13FinBoxLending0aB13JourneyResultV"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13FinBoxLending0C4ViewV13lendingResultACyAA0ab7JourneyF0Vc_tcfc",
+            "mangledName": "$s13FinBoxLending0C4ViewV13lendingResultACyAA0ab7JourneyF0Vc_tcfc",
+            "moduleName": "FinBoxLending",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "body",
+            "printedName": "body",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OpaqueTypeArchetype",
+                "printedName": "some SwiftUI.View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "View",
+                    "printedName": "SwiftUI.View",
+                    "usr": "s:7SwiftUI4ViewP"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13FinBoxLending0C4ViewV4bodyQrvp",
+            "mangledName": "$s13FinBoxLending0C4ViewV4bodyQrvp",
+            "moduleName": "FinBoxLending",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpaqueTypeArchetype",
+                    "printedName": "some SwiftUI.View",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "View",
+                        "printedName": "SwiftUI.View",
+                        "usr": "s:7SwiftUI4ViewP"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13FinBoxLending0C4ViewV4bodyQrvg",
+                "mangledName": "$s13FinBoxLending0C4ViewV4bodyQrvg",
+                "moduleName": "FinBoxLending",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:13FinBoxLending0C4ViewV",
+        "mangledName": "$s13FinBoxLending0C4ViewV",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "Preconcurrency",
+          "Custom",
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "View",
+            "printedName": "View",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Body",
+                "printedName": "Body",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpaqueTypeArchetype",
+                    "printedName": "some SwiftUI.View",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "View",
+                        "printedName": "SwiftUI.View",
+                        "usr": "s:7SwiftUI4ViewP"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7SwiftUI4ViewP",
+            "mangledName": "$s7SwiftUI4ViewP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FinBoxLending",
+        "printedName": "FinBoxLending",
+        "children": [
+          {
+            "kind": "TypeDecl",
+            "name": "Builder",
+            "printedName": "Builder",
+            "children": [
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:13FinBoxLendingAAC7BuilderCADycfc",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderCADycfc",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Function",
+                "name": "customerID",
+                "printedName": "customerID(id:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC10customerID2idADSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC10customerID2idADSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "apiKey",
+                "printedName": "apiKey(key:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC6apiKey3keyADSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC6apiKey3keyADSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "userToken",
+                "printedName": "userToken(token:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC9userToken5tokenADSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC9userToken5tokenADSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "environment",
+                "printedName": "environment(env:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC11environment3envADSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC11environment3envADSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "creditLineAmount",
+                "printedName": "creditLineAmount(amount:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Float",
+                    "printedName": "Swift.Float",
+                    "usr": "s:Sf"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC16creditLineAmount6amountADSf_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC16creditLineAmount6amountADSf_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "creditLineTransactionID",
+                "printedName": "creditLineTransactionID(transactionID:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC23creditLineTransactionID011transactionH0ADSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC23creditLineTransactionID011transactionH0ADSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "showToolBar",
+                "printedName": "showToolBar(show:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC11showToolBar0E0ADSb_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC11showToolBar0E0ADSb_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "hidePoweredBy",
+                "printedName": "hidePoweredBy(hide:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC13hidePoweredBy0E0ADSb_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC13hidePoweredBy0E0ADSb_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "dcEnabled",
+                "printedName": "dcEnabled(enabled:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC9dcEnabled7enabledADSb_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC9dcEnabled7enabledADSb_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "utmTerm",
+                "printedName": "utmTerm(utmTerm:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC7utmTermAeDSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC7utmTermAeDSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "utmSource",
+                "printedName": "utmSource(utmSource:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC9utmSourceAeDSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC9utmSourceAeDSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "utmMedium",
+                "printedName": "utmMedium(utmMedium:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC9utmMediumAeDSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC9utmMediumAeDSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "utmContent",
+                "printedName": "utmContent(utmContent:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC10utmContentAeDSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC10utmContentAeDSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "utmCampaign",
+                "printedName": "utmCampaign(utmCampaign:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC11utmCampaignAeDSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC11utmCampaignAeDSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "utmPartnerName",
+                "printedName": "utmPartnerName(utmPartnerName:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC14utmPartnerNameAeDSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC14utmPartnerNameAeDSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "utmPartnerMedium",
+                "printedName": "utmPartnerMedium(utmPartnerMedium:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC16utmPartnerMediumAeDSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC16utmPartnerMediumAeDSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "appsflyerId",
+                "printedName": "appsflyerId(appsflyerId:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC11appsflyerIdAeDSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC11appsflyerIdAeDSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "idfa",
+                "printedName": "idfa(idfa:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC4idfaAeDSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC4idfaAeDSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "advertisingId",
+                "printedName": "advertisingId(advertisingId:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "FinBoxLending.FinBoxLending.Builder",
+                    "usr": "s:13FinBoxLendingAAC7BuilderC"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC13advertisingIdAeDSS_tF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC13advertisingIdAeDSS_tF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "build",
+                "printedName": "build()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FinBoxLending",
+                    "printedName": "FinBoxLending.FinBoxLending",
+                    "usr": "s:13FinBoxLendingAAC"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC5buildAByF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC5buildAByF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "savePreferences",
+                "printedName": "savePreferences(customerID:apiKey:userToken:environment:creditLineAmount:creditLineTransactionID:showToolBar:hidePoweredBy:dcEnabled:utmTerm:utmSource:utmContent:utmMedium:utmCampaign:utmPartnerName:utmPartnerMedium:appsflyerId:idfa:advertisingId:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Float?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Float",
+                        "printedName": "Swift.Float",
+                        "usr": "s:Sf"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:13FinBoxLendingAAC7BuilderC15savePreferences10customerID6apiKey9userToken11environment16creditLineAmount0no11TransactionH011showToolBar13hidePoweredBy9dcEnabled7utmTerm0Z6Source0Z7Content0Z6Medium0Z8Campaign0Z11PartnerName0Z13PartnerMedium11appsflyerId4idfa13advertisingIdySS_S3SSfSgSSSgS3bA10ZtF",
+                "mangledName": "$s13FinBoxLendingAAC7BuilderC15savePreferences10customerID6apiKey9userToken11environment16creditLineAmount0no11TransactionH011showToolBar13hidePoweredBy9dcEnabled7utmTerm0Z6Source0Z7Content0Z6Medium0Z8Campaign0Z11PartnerName0Z13PartnerMedium11appsflyerId4idfa13advertisingIdySS_S3SSfSgSSSgS3bA10ZtF",
+                "moduleName": "FinBoxLending",
+                "declAttributes": [
+                  "AccessControl"
+                ],
+                "funcSelfKind": "NonMutating"
+              }
+            ],
+            "declKind": "Class",
+            "usr": "s:13FinBoxLendingAAC7BuilderC",
+            "mangledName": "$s13FinBoxLendingAAC7BuilderC",
+            "moduleName": "FinBoxLending",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:13FinBoxLendingAAC",
+        "mangledName": "$s13FinBoxLendingAAC",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LendingEnvironment",
+        "printedName": "LendingEnvironment",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "UAT",
+            "printedName": "UAT",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FinBoxLending.LendingEnvironment.Type) -> FinBoxLending.LendingEnvironment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LendingEnvironment",
+                    "printedName": "FinBoxLending.LendingEnvironment",
+                    "usr": "s:13FinBoxLending0C11EnvironmentO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FinBoxLending.LendingEnvironment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LendingEnvironment",
+                        "printedName": "FinBoxLending.LendingEnvironment",
+                        "usr": "s:13FinBoxLending0C11EnvironmentO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13FinBoxLending0C11EnvironmentO3UATyA2CmF",
+            "mangledName": "$s13FinBoxLending0C11EnvironmentO3UATyA2CmF",
+            "moduleName": "FinBoxLending"
+          },
+          {
+            "kind": "Var",
+            "name": "PROD",
+            "printedName": "PROD",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(FinBoxLending.LendingEnvironment.Type) -> FinBoxLending.LendingEnvironment",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LendingEnvironment",
+                    "printedName": "FinBoxLending.LendingEnvironment",
+                    "usr": "s:13FinBoxLending0C11EnvironmentO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "FinBoxLending.LendingEnvironment.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LendingEnvironment",
+                        "printedName": "FinBoxLending.LendingEnvironment",
+                        "usr": "s:13FinBoxLending0C11EnvironmentO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13FinBoxLending0C11EnvironmentO4PRODyA2CmF",
+            "mangledName": "$s13FinBoxLending0C11EnvironmentO4PRODyA2CmF",
+            "moduleName": "FinBoxLending"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FinBoxLending.LendingEnvironment?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LendingEnvironment",
+                    "printedName": "FinBoxLending.LendingEnvironment",
+                    "usr": "s:13FinBoxLending0C11EnvironmentO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13FinBoxLending0C11EnvironmentO8rawValueACSgSS_tcfc",
+            "mangledName": "$s13FinBoxLending0C11EnvironmentO8rawValueACSgSS_tcfc",
+            "moduleName": "FinBoxLending",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13FinBoxLending0C11EnvironmentO8rawValueSSvp",
+            "mangledName": "$s13FinBoxLending0C11EnvironmentO8rawValueSSvp",
+            "moduleName": "FinBoxLending",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13FinBoxLending0C11EnvironmentO8rawValueSSvg",
+                "mangledName": "$s13FinBoxLending0C11EnvironmentO8rawValueSSvg",
+                "moduleName": "FinBoxLending",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:13FinBoxLending0C11EnvironmentO",
+        "mangledName": "$s13FinBoxLending0C11EnvironmentO",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "FinBoxJourneyResult",
+        "printedName": "FinBoxJourneyResult",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "code",
+            "printedName": "code",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13FinBoxLending0aB13JourneyResultV4codeSSSgvp",
+            "mangledName": "$s13FinBoxLending0aB13JourneyResultV4codeSSSgvp",
+            "moduleName": "FinBoxLending",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13FinBoxLending0aB13JourneyResultV4codeSSSgvg",
+                "mangledName": "$s13FinBoxLending0aB13JourneyResultV4codeSSSgvg",
+                "moduleName": "FinBoxLending",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13FinBoxLending0aB13JourneyResultV4codeSSSgvs",
+                "mangledName": "$s13FinBoxLending0aB13JourneyResultV4codeSSSgvs",
+                "moduleName": "FinBoxLending",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13FinBoxLending0aB13JourneyResultV4codeSSSgvM",
+                "mangledName": "$s13FinBoxLending0aB13JourneyResultV4codeSSSgvM",
+                "moduleName": "FinBoxLending",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "screen",
+            "printedName": "screen",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13FinBoxLending0aB13JourneyResultV6screenSSSgvp",
+            "mangledName": "$s13FinBoxLending0aB13JourneyResultV6screenSSSgvp",
+            "moduleName": "FinBoxLending",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13FinBoxLending0aB13JourneyResultV6screenSSSgvg",
+                "mangledName": "$s13FinBoxLending0aB13JourneyResultV6screenSSSgvg",
+                "moduleName": "FinBoxLending",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13FinBoxLending0aB13JourneyResultV6screenSSSgvs",
+                "mangledName": "$s13FinBoxLending0aB13JourneyResultV6screenSSSgvs",
+                "moduleName": "FinBoxLending",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13FinBoxLending0aB13JourneyResultV6screenSSSgvM",
+                "mangledName": "$s13FinBoxLending0aB13JourneyResultV6screenSSSgvM",
+                "moduleName": "FinBoxLending",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "message",
+            "printedName": "message",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13FinBoxLending0aB13JourneyResultV7messageSSSgvp",
+            "mangledName": "$s13FinBoxLending0aB13JourneyResultV7messageSSSgvp",
+            "moduleName": "FinBoxLending",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13FinBoxLending0aB13JourneyResultV7messageSSSgvg",
+                "mangledName": "$s13FinBoxLending0aB13JourneyResultV7messageSSSgvg",
+                "moduleName": "FinBoxLending",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13FinBoxLending0aB13JourneyResultV7messageSSSgvs",
+                "mangledName": "$s13FinBoxLending0aB13JourneyResultV7messageSSSgvs",
+                "moduleName": "FinBoxLending",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13FinBoxLending0aB13JourneyResultV7messageSSSgvM",
+                "mangledName": "$s13FinBoxLending0aB13JourneyResultV7messageSSSgvM",
+                "moduleName": "FinBoxLending",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FinBoxJourneyResult",
+                "printedName": "FinBoxLending.FinBoxJourneyResult",
+                "usr": "s:13FinBoxLending0aB13JourneyResultV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13FinBoxLending0aB13JourneyResultV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s13FinBoxLending0aB13JourneyResultV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "FinBoxLending",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13FinBoxLending0aB13JourneyResultV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s13FinBoxLending0aB13JourneyResultV6encode2toys7Encoder_p_tKF",
+            "moduleName": "FinBoxLending",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:13FinBoxLending0aB13JourneyResultV",
+        "mangledName": "$s13FinBoxLending0aB13JourneyResultV",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending"
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending"
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "PDFKit",
+        "printedName": "PDFKit",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinBoxLending",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 583,
+      "length": 12,
+      "value": "\"customerID\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 626,
+      "length": 16,
+      "value": "\"withdrawAmount\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 670,
+      "length": 13,
+      "value": "\"redirectURL\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 713,
+      "length": 15,
+      "value": "\"transactionID\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 751,
+      "length": 8,
+      "value": "\"source\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 785,
+      "length": 11,
+      "value": "\"hideClose\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 820,
+      "length": 9,
+      "value": "\"hidefaq\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 854,
+      "length": 10,
+      "value": "\"hideback\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 888,
+      "length": 9,
+      "value": "\"hideNav\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 927,
+      "length": 15,
+      "value": "\"hidePoweredBy\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 966,
+      "length": 9,
+      "value": "\"sdkType\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1000,
+      "length": 10,
+      "value": "\"location\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1041,
+      "length": 16,
+      "value": "\"campaignParams\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1454,
+      "length": 10,
+      "value": "\"utm-term\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1490,
+      "length": 12,
+      "value": "\"utm-source\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1529,
+      "length": 13,
+      "value": "\"utm-content\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1568,
+      "length": 12,
+      "value": "\"utm-medium\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1608,
+      "length": 14,
+      "value": "\"utm-campaign\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1653,
+      "length": 18,
+      "value": "\"UTM_Partner_Name\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1704,
+      "length": 20,
+      "value": "\"UTM_Partner_Medium\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1752,
+      "length": 14,
+      "value": "\"appsflyer_id\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1787,
+      "length": 6,
+      "value": "\"idfa\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1823,
+      "length": 16,
+      "value": "\"advertising_id\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 2056,
+      "length": 10,
+      "value": "\"latitude\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 2092,
+      "length": 11,
+      "value": "\"longitude\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 2128,
+      "length": 10,
+      "value": "\"altitude\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/models\/SessionRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 2163,
+      "length": 10,
+      "value": "\"accuracy\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/viewmodels\/SessionViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 238,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 189,
+      "length": 28,
+      "value": "\"finbox_lending_customer_id\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 247,
+      "length": 24,
+      "value": "\"finbox_lending_api_key\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 304,
+      "length": 27,
+      "value": "\"finbox_lending_user_token\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 365,
+      "length": 28,
+      "value": "\"finbox_lending_environment\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 434,
+      "length": 35,
+      "value": "\"finbox_lending_credit_line_amount\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 518,
+      "length": 43,
+      "value": "\"finbox_lending_credit_line_transaction_id\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 597,
+      "length": 30,
+      "value": "\"finbox_lending_show_tool_bar\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 665,
+      "length": 32,
+      "value": "\"finbox_lending_hide_powered_by\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 733,
+      "length": 30,
+      "value": "\"finbox_lending_apps_flyer_id\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 790,
+      "length": 21,
+      "value": "\"finbox_lending_idfa\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 848,
+      "length": 31,
+      "value": "\"finbox_lending_advertising_id\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 912,
+      "length": 27,
+      "value": "\"finbox_lending_utm_source\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 973,
+      "length": 28,
+      "value": "\"finbox_lending_utm_content\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1034,
+      "length": 27,
+      "value": "\"finbox_lending_utm_medium\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1096,
+      "length": 29,
+      "value": "\"finbox_lending_utm_campaign\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1164,
+      "length": 33,
+      "value": "\"finbox_lending_utm_partner_name\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1238,
+      "length": 27,
+      "value": "\"finbox_lending_utm_medium\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1352,
+      "length": 25,
+      "value": "\"PERSONAL_INFO_SUBMITTED\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1404,
+      "length": 6,
+      "value": "\"EXIT\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1454,
+      "length": 23,
+      "value": "\"APPLICATION_COMPLETED\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1519,
+      "length": 21,
+      "value": "\"PAYMENT_SUCCESSFULL\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1567,
+      "length": 6,
+      "value": "\"WAIT\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1614,
+      "length": 20,
+      "value": "\"OTP_LIMIT_EXCEEDED\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1676,
+      "length": 27,
+      "value": "\"ESIGN_LOCATION_PERMISSION\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1743,
+      "length": 19,
+      "value": "\"SHOW_PROFILE_ICON\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1787,
+      "length": 19,
+      "value": "\"CAMERA_PERMISSION\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1833,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1865,
+      "length": 15,
+      "value": "\"finbox_result\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1914,
+      "length": 7,
+      "value": "\"MW200\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1955,
+      "length": 7,
+      "value": "\"MW500\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 1994,
+      "length": 7,
+      "value": "\"MW400\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2047,
+      "length": 7,
+      "value": "\"CL200\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2100,
+      "length": 7,
+      "value": "\"CL500\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2155,
+      "length": 30,
+      "value": "\"https:\/\/lendingdev.finbox.in\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2233,
+      "length": 30,
+      "value": "\"https:\/\/lendinguat.finbox.in\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2313,
+      "length": 31,
+      "value": "\"https:\/\/lendingapis.finbox.in\""
+    },
+    {
+      "filePath": "\/Users\/srikar\/Work\/Ios\/WebLending\/FinBoxLending\/constants\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 2391,
+      "length": 24,
+      "value": "\"\/v1\/user\/clientSession\""
+    }
+  ]
+}
