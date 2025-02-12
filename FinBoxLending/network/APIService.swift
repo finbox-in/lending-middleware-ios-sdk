@@ -10,6 +10,7 @@ import Foundation
 struct APIService {
     
     static let shared = APIService()
+    private static var callbackSent = CallbackSent()
     
     /// Constructs the URL for the session.
     /// - Returns: The URL for the session, formed by combining the `BASE_URL` and `END_POINT`
@@ -49,7 +50,7 @@ struct APIService {
         let task = URLSession.shared.dataTask(with: requestParams) { data, response, error in
             
             if let error = error {
-                self.handleError(completion: completion, error: error)
+                self.handleError(completion: completion, error: error.localizedDescription)
                 return
             }
             
@@ -71,7 +72,7 @@ struct APIService {
                 // Convert the response to object
                 sessionResponse = try JSONDecoder().decode(SessionResponse.self, from: data)
             } catch {
-                self.handleClientError(completion: completion, error: error)
+                self.handleError(completion: completion, error: "JSON Error")
             }
             
             // Handle the HTTP response
@@ -154,25 +155,36 @@ struct APIService {
         )
     }
     
+    /// Creates SessionResult for Callback
+    /// - Parameters
+    ///     - error (Optional) : String error
+    ///     - sessionURL (Optional): String URL
+    /// - Returns
+    ///     - SessionResult object with only error or sessionURL
+    func getResult(error: String?, sessionURL: String?) -> SessionResult {
+        if (error != nil && sessionURL == nil) {
+            return SessionResult(error: error, sessionURL: nil)
+        } else {
+            return SessionResult(error: nil, sessionURL: sessionURL)
+        }
+    }
+    
     /// Handles client errors
     func handleClientError(completion: @escaping (SessionResult) -> Void, error: Any) {
         debugPrint("Response Error Client: \(error as Any)")
-        let result = SessionResult(error: String(describing: error), sessionURL: nil)
-        sendCallback(completion: completion, result: result)
+        sendCallback(completion: completion, result: getResult(error: String(describing: error), sessionURL: nil))
     }
     
     /// Handles server errors
     func handleServerError(completion: @escaping (SessionResult) -> Void, error: Any) {
         debugPrint("Response Error Server: \(String(describing: error))")
-        let result = SessionResult(error: String(describing: error), sessionURL: nil)
-        sendCallback(completion: completion, result: result)
+        sendCallback(completion: completion, result: getResult(error: String(describing: error), sessionURL: nil))
     }
     
     /// Handles generic errors
     func handleError(completion: @escaping (SessionResult) -> Void, error: Any) {
         debugPrint("Response Error Generic: \(String(describing: error))")
-        let result = SessionResult(error: String(describing: error), sessionURL: nil)
-        sendCallback(completion: completion, result: result)
+        sendCallback(completion: completion, result: getResult(error: String(describing: error), sessionURL: nil))
     }
     
     /// Sends an asynchronous callback after a (slight-possible) delay.
@@ -180,6 +192,15 @@ struct APIService {
     ///   - completion: A closure to be executed when the asynchronous operation completes. It takes a `String` parameter.
     ///   - result: The result to be passed to the completion closure.
     func sendCallback(completion: @escaping (SessionResult) -> Void, result: SessionResult) {
+        // Check if the callback has already been sent
+        guard !APIService.callbackSent.status else {
+            return
+        }
+        
+        // Update the sent status
+        APIService.callbackSent.updateStatus()
+        
+        // Send callback
         DispatchQueue.global().asyncAfter(deadline: .now()) {
             completion(result)
         }
