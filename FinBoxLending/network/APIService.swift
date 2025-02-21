@@ -137,7 +137,7 @@ struct APIService {
         // TODO: Read sdk version number from pod file
         // Create a session object
         return SessionRequest(customerID: customerID, withdrawAmount: userPref.creditLineAmount,
-                              redirectURL: nil, transactionID: userPref.creditLineTransactionID, source: nil,
+                              redirectURL: nil, transactionID: userPref.creditLineTransactionID, source: "ios",
                               hideClose: false, hidefaq: true, hideback: false, hideNav: true,
                               hidePoweredBy: userPref.hidePoweredBy, sdkType: "hybrid:ios:0.0.2",
                               location: nil,
