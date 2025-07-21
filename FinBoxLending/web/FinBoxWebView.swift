@@ -35,6 +35,9 @@ struct FinBoxWebView: UIViewRepresentable {
                 webView: webView
             ),
             name: "FbxLendingiOS")
+        config.userContentController.add(
+            AnalyticsCallback(),
+            name: "callback")
         
         webView.navigationDelegate = context.coordinator
         

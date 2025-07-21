@@ -9,44 +9,41 @@ import SwiftUI
 import FinBoxLending
 import UIKit
 import WebKit
+import Combine
 
 
 struct ContentView: View {
-    
     @State var isLendingScreenShown = false
+    @StateObject private var viewModel = ContentViewModel()
     
     var body: some View {
         NavigationStack {
             VStack {
-                NavigationLink(destination: startLending(), isActive: $isLendingScreenShown) {
-                    lendingButtonClicked()
+                NavigationLink(destination: startLendingView(), isActive: $isLendingScreenShown) {
+                    lendingButton
                 }
             }
             .padding()
         }
     }
     
-    func lendingButtonClicked() -> some View {
-        Button(action: {
+    var lendingButton: some View {
+        Button("Start Lending") {
             isLendingScreenShown = true
-        }, label: {
-            Text("Start Lending")
-        }).buttonStyle(.borderedProminent)
+        }
+        .buttonStyle(.borderedProminent)
     }
     
-    func startLending() -> some View {
+    func startLendingView() -> some View {
         let _ = FinBoxLending.Builder()
-//            .apiKey(key: "iUJT1sxksi5ipCye69OTf3b8FCsQlYgl9J6SXRFY") // UAT - IIFL - PL
-//            .apiKey(key: "sni196oD2W4iM9CO7RuKk105wLDkkEQ9mDxgj0Gh")
-            .apiKey(key: "TGCNfiXhYBSaPiRFwXveljpcCkgJihPbbtVElQxW")
-            .customerID(id: "ABCD80575")
-            .userToken(token: "QELthnsBwjVnmVJAdAzsZQeIKGHvlXidqmLdQOILSmJriNnhFnmeJxTWaPJhpwxz")
-            .environment(env: "DEV1")
+            .apiKey(key: "OmEyhhucWLvaBdOfngrgwwJvSoVpjeWJsAFB")
+            .customerID(id: "FB_MC_yU3iSOSsWvakje62NTeV")
+            .userToken(token: "hGWvgTBiCvGIZopLxRQJpEOOBolNyvdGGtuFEOZgqyORBdvUebLnoxFUzVexDgFk")
+            .environment(env: "UAT5")
             .build()
         
-        return LendingView() {
-            payload in
-            debugPrint("Status Code", payload.code ?? "Status Code is empty")
+        return LendingView { payload in
+            debugPrint("Status Code", payload.code ?? "empty")
         }.navigationBarHidden(true)
     }
 }
