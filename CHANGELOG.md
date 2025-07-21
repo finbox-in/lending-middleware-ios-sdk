@@ -1,6 +1,6 @@
 #  FinBox Lending iOS SDK
 
-## 0.2.3
+## 0.2.4
 
 Add Source in Sessions API
 
