@@ -74,6 +74,11 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
                 debugPrint("User Exit")
                 finBoxJourneyResult.code = "MW500"
                 finBoxJourneyResult.message = "User Exit"
+            
+            case FINBOX_ABCL_OFFER_SELECTED:
+                debugPrint("ABCL Offer Selected")
+                finBoxJourneyResult.code = "MW600"
+                finBoxJourneyResult.message = "ABCL Offer Selected"
                 
             case FINBOX_LENDING_APPLICATION_COMPLETED:
                 debugPrint("Lending Result Success")
