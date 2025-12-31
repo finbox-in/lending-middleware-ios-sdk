@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "FinBoxLending"
-  spec.version      = "0.2.6"
+  spec.version      = "0.2.7"
   spec.summary      = "FinBoxLending IOS SDK to enable Lending journey for IOS devices"
 
   # This description is used to generate tags and improve search results.
@@ -135,5 +135,12 @@ FinBox Lending allows users to submit their bank account statements, kyc details
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
+  
+  spec.static_framework = true
+
+  spec.info_plist = {
+    'CFBundleShortVersionString' => spec.version.to_s,
+    'CFBundleVersion' => spec.version.to_s
+  }
 
 end

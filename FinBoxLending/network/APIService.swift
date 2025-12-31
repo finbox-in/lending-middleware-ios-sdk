@@ -134,12 +134,17 @@ struct APIService {
             return nil
         }
         
+        let version = Bundle(for: FinBoxLending.self)
+            .infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.0.2"
+
+        let sdkType = "hybrid:ios:\(version)"
+        
         // TODO: Read sdk version number from pod file
         // Create a session object
         return SessionRequest(customerID: customerID, withdrawAmount: userPref.creditLineAmount,
                               redirectURL: nil, transactionID: userPref.creditLineTransactionID, source: "ios",
                               hideClose: false, hidefaq: true, hideback: false, hideNav: true,
-                              hidePoweredBy: userPref.hidePoweredBy, sdkType: "hybrid:ios:0.0.2",
+                              hidePoweredBy: userPref.hidePoweredBy, sdkType: sdkType,
                               location: nil,
                               campaignParams: CampaignParams(utmTerm: userPref.utmTerm,
                                                              utmSource: userPref.utmSource,
