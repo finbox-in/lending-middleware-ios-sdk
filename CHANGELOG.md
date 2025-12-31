@@ -1,5 +1,9 @@
 #  FinBox Lending iOS SDK
 
+## 0.3.0
+
+Bump Version
+
 ## 0.2.9
 
 Bump Version
