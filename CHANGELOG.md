@@ -1,5 +1,13 @@
 #  FinBox Lending iOS SDK
 
+## 0.2.8
+
+Bump Version
+
+## 0.2.7
+
+Expose Version
+
 ## 0.2.6
 
 Add ABCL Callback
