@@ -1,5 +1,9 @@
 #  FinBox Lending iOS SDK
 
+## 0.3.1
+
+Remove static library linking
+
 ## 0.3.0
 
 Bump Version

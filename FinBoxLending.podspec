@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "FinBoxLending"
-  spec.version      = "0.3.0"
+  spec.version      = "0.3.1"
   spec.summary      = "FinBoxLending IOS SDK to enable Lending journey for IOS devices"
 
   # This description is used to generate tags and improve search results.
@@ -53,7 +53,10 @@ FinBox Lending allows users to submit their bank account statements, kyc details
   #  profile URL.
   #
 
-  spec.author             = { "Srikar Reddy" => "srikar@finbox.in" }
+  spec.author = {
+        "Srikar Reddy" => "srikar@finbox.in",
+        "Ashutosh Jena" => "ashutosh.jena@finbox.in"
+  }
   # Or just: spec.author    = "Srikar Reddy"
   # spec.authors            = { "Srikar Reddy" => "gsrikar2010@gmail.com" }
   # spec.social_media_url   = "https://twitter.com/Srikar Reddy"
@@ -135,7 +138,5 @@ FinBox Lending allows users to submit their bank account statements, kyc details
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
-  
-  spec.static_framework = true
 
 end
