@@ -1,5 +1,29 @@
 #  FinBox Lending iOS SDK
 
+## 0.3.1
+
+Remove static library linking
+
+## 0.3.0
+
+Bump Version
+
+## 0.2.9
+
+Bump Version
+
+## 0.2.8
+
+Bump Version
+
+## 0.2.7
+
+Expose Version
+
+## 0.2.6
+
+Add ABCL Callback
+
 ## 0.2.5
 
 Add Source in Sessions API
