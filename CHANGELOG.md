@@ -1,5 +1,11 @@
 #  FinBox Lending iOS SDK
 
+## 0.3.2
+
+Inject window.WEBVIEW_PLATFORM='ios' before page content loads
+Add .gitignore and remove tracked IDE/OS files
+
+
 ## 0.2.5
 
 Add Source in Sessions API
