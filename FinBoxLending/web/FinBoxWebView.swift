@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import WebKit
 
+
 struct FinBoxWebView: UIViewRepresentable {
     
     let urlString: String?
@@ -21,6 +22,15 @@ struct FinBoxWebView: UIViewRepresentable {
         let config = WKWebViewConfiguration()
         // Create a user controller
         config.userContentController = WKUserContentController()
+        
+        // Inject platform identifier before page content loads (equivalent to injectedJavaScriptBeforeContentLoaded in React Native)
+        // added for jio-respo
+        let platformScript = WKUserScript(
+            source: "window.WEBVIEW_PLATFORM = 'ios';",
+            injectionTime: .atDocumentStart,
+            forMainFrameOnly: true
+        )
+        config.userContentController.addUserScript(platformScript)
         
         // Opens camera in image mode
         config.allowsInlineMediaPlayback = true
