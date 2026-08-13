@@ -26,10 +26,21 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        do {
-            try parseMessageBody(message: message.body)
-        } catch {
-            debugPrint("Json Decode Error")
+        switch message.name {
+        case "FbxLendingiOS":
+            do {
+                try parseMessageBody(message: message.body)
+            } catch {
+                debugPrint("Json Decode Error")
+                lendingResult(
+                    FinBoxJourneyResult(
+                        code: FINBOX_RCE_2000_GENERIC_CODE_ERROR,
+                        screen: "",
+                        message: MESSAGE_RCE_2000
+                    )
+                )
+            }
+        case "closeWebView":
             lendingResult(
                 FinBoxJourneyResult(
                     code: FINBOX_RCE_2000_GENERIC_CODE_ERROR,
@@ -37,8 +48,17 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
                     message: MESSAGE_RCE_2000
                 )
             )
+        case "retryPageLoad":
+            if let urlToRetry = message.body as? String, !urlToRetry.isEmpty {
+                if let request = NetworkUtils.getRequest(urlString: urlToRetry) {
+                    webView?.load(request)
+                }
+            } else {
+                debugPrint("Handler: Error - Retry payload string was empty or corrupt.")
+            }
+        default :
+            break
         }
-        
     }
     
     func parseMessageBody(message: Any) throws {
@@ -224,5 +244,4 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
             showLocationServicesDisabledAlert()
         }
     }
-    
 }
