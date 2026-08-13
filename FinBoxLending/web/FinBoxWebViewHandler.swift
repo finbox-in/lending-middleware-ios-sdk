@@ -30,6 +30,13 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
             try parseMessageBody(message: message.body)
         } catch {
             debugPrint("Json Decode Error")
+            lendingResult(
+                FinBoxJourneyResult(
+                    code: FINBOX_RCE_2000_GENERIC_CODE_ERROR,
+                    screen: "",
+                    message: MESSAGE_RCE_2000
+                )
+            )
         }
         
     }
@@ -72,18 +79,18 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
                 
             case FINBOX_LENDING_EXIT:
                 debugPrint("User Exit")
-                finBoxJourneyResult.code = "MW500"
-                finBoxJourneyResult.message = "User Exit"
+                finBoxJourneyResult.code = FINBOX_RCE_500_GENERIC_WEB_EXIT
+                finBoxJourneyResult.message = MESSAGE_RCE_500
                 
             case FINBOX_LENDING_APPLICATION_COMPLETED:
                 debugPrint("Lending Result Success")
-                finBoxJourneyResult.code = "MW200"
+                finBoxJourneyResult.code = FINBOX_RC_200_SUCCESS
                 finBoxJourneyResult.message = "Application Completed"
                 
             case FINBOX_LENDING_WAIT:
                 debugPrint("Lending Result Wait")
-                // TODO: Check this later
-                finBoxJourneyResult.code = "MW400"
+                finBoxJourneyResult.code = FINBOX_RCE_2000_GENERIC_CODE_ERROR
+                finBoxJourneyResult.message = MESSAGE_RCE_2000
                 
             case FINBOX_LENDING_PAYMENT_SUCCESSFULL:
                 debugPrint("Lending Payment Successful")
@@ -219,4 +226,3 @@ class FinBoxWebViewHandler: NSObject, WKScriptMessageHandler, UIImagePickerContr
     }
     
 }
-

@@ -11,18 +11,18 @@ import WebKit
 
 
 struct FinBoxWebView: UIViewRepresentable {
-    
+
     let urlString: String?
-    
+
     // Result Function
     public let lendingResult : ((FinBoxJourneyResult) -> Void)
-    
+
     func makeUIView(context: Context) -> WKWebView {
         // Create a configuration
         let config = WKWebViewConfiguration()
         // Create a user controller
         config.userContentController = WKUserContentController()
-        
+
         // Inject platform identifier before page content loads (equivalent to injectedJavaScriptBeforeContentLoaded in React Native)
         // added for jio-respo
         let platformScript = WKUserScript(
@@ -31,13 +31,13 @@ struct FinBoxWebView: UIViewRepresentable {
             forMainFrameOnly: true
         )
         config.userContentController.addUserScript(platformScript)
-        
+
         // Opens camera in image mode
         config.allowsInlineMediaPlayback = true
-        
+
         // Checks whether media playback requires user action (like a tap) in order to start
         config.mediaTypesRequiringUserActionForPlayback = []
-        
+
         let webView = WKWebView(frame: UIScreen.main.bounds, configuration: config)
         config.userContentController.add(
             FinBoxWebViewHandler(
@@ -48,20 +48,39 @@ struct FinBoxWebView: UIViewRepresentable {
         config.userContentController.add(
             AnalyticsCallback(),
             name: "callback")
-        
+
         webView.navigationDelegate = context.coordinator
-        
+
         return webView
     }
-    
+
     func updateUIView(_ uiView: WKWebView, context: Context) {
         guard let sessionURL = urlString else {
             debugPrint("Session URL is empty")
+            lendingResult(
+                FinBoxJourneyResult(
+                    code: FINBOX_RCE_1200_SDK_INIT_ERROR,
+                    screen: "",
+                    message: MESSAGE_RCE_1200
+                )
+            )
             return
         }
-        uiView.load(NetworkUtils.getRequest(urlString: sessionURL))
+
+        guard let request = NetworkUtils.getRequest(urlString: sessionURL) else {
+            lendingResult(
+                FinBoxJourneyResult(
+                    code: FINBOX_RCE_1200_SDK_INIT_ERROR,
+                    screen: "",
+                    message: MESSAGE_RCE_1200
+                )
+            )
+            return
+        }
+
+        uiView.load(request)
     }
-    
+
     func makeCoordinator() -> WebViewCoordinator {
         WebViewCoordinator()
     }

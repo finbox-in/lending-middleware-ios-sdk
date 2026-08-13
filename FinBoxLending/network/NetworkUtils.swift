@@ -9,8 +9,13 @@ import Foundation
 
 struct NetworkUtils {
     
-    static func getRequest(urlString: String) -> URLRequest {
-        return URLRequest(url: URL(string: urlString)!)
+    static func getRequest(urlString: String) -> URLRequest? {
+        guard let url = URL(string: urlString) else {
+            debugPrint("Convert to URL object is null")
+            return nil
+        }
+        
+        return URLRequest(url: url)
     }
     
     static func postRequest(urlString: String, body: Data) -> URLRequest? {
