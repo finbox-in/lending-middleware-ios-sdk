@@ -1,5 +1,11 @@
 #  FinBox Lending iOS SDK
 
+## 0.3.3
+
+Add new error codes
+Add timeout page for pages taking too long to load
+
+
 ## 0.3.2
 
 Inject window.WEBVIEW_PLATFORM='ios' before page content loads

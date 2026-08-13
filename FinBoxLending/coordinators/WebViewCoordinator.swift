@@ -15,6 +15,11 @@ import WebKit
 */
 class WebViewCoordinator: NSObject, WKNavigationDelegate, URLSessionDownloadDelegate {
     
+    weak var webView: WKWebView?
+    var pageLoadTimer: Timer?
+    let maxLoadTime: TimeInterval = 30
+    var initialUrlString: String?
+    
     /// WKNavigationDelegate method called when the web view is about to navigate to a new URL.
     /// Allows the coordinator to intercept and handle certain navigation actions, such as downloading content.
     /// - Parameters:
@@ -134,6 +139,118 @@ class WebViewCoordinator: NSObject, WKNavigationDelegate, URLSessionDownloadDele
                 debugPrint("Failed with: \(error)")
             }
         }
+    }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation: WKNavigation!) {
+        if isWebUrl(url: webView.url?.absoluteString) {
+            startPageLoadTimer()
+        }
+    }
+    
+    func webView(_ webView: WKWebView, didFinish: WKNavigation!) {
+        cancelPageLoadTimer()
+    }
+    
+    func webView(_ webView: WKWebView, didFail: WKNavigation!) {
+        cancelPageLoadTimer()
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation: WKNavigation!) {
+        cancelPageLoadTimer()
+    }
+    
+    private func startPageLoadTimer() {
+        pageLoadTimer?.invalidate()
+        pageLoadTimer = Timer.scheduledTimer(withTimeInterval: maxLoadTime, repeats: false) { [weak self] _ in
+            self?.handlePageLoadTimeout()
+        }
+    }
+    
+    private func cancelPageLoadTimer() {
+        pageLoadTimer?.invalidate()
+        pageLoadTimer = nil
+    }
+    
+    private func handlePageLoadTimeout() {
+        if let webView = self.webView, webView.isLoading {
+            webView.stopLoading()
+        }
+        pageLoadTimer = nil
+        let failedUrlString = webView?.url?.absoluteString
+                    ?? initialUrlString
+                    ?? ""
+        
+        let html = """
+                <!DOCTYPE html>
+                <html>
+                <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+                <style>
+                    body {
+                        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                        padding: 40px 20px;
+                        text-align: center;
+                        background-color: #ffffff;
+                        color: #333333;
+                    }
+                    h1 {
+                        font-size: 24px;
+                        margin-top: 200px;
+                        margin-bottom: 100px;
+                    }
+                    button {
+                        display: block;
+                        width: 100%;
+                        max-width: 280px;
+                        margin: 12px auto;
+                        padding: 14px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        border: none;
+                        border-radius: 8px;
+                        cursor: pointer;
+                    }
+                    .btn-close {
+                        background-color: #f2f2f7;
+                        color: #000000;
+                    }
+                    .btn-retry {
+                        background-color: #F47920;
+                        color: #ffffff;
+                    }
+                </style>
+                </head>
+                <body>
+                    <h1>Something went wrong!</h1>
+                
+                    <button id="retryBtn" class="btn-retry" onclick="retryPageLoad()">Retry</button>
+                    <button class="btn-close" onclick="closeWebView()">Close</button>
+                
+                    <script>
+                        const failedUrl = "\(failedUrlString)";
+                        let isRetrying = false; 
+                        function closeWebView() {
+                            window.webkit.messageHandlers.closeWebView.postMessage(null);
+                        }
+                        function retryPageLoad() {
+                            if (isRetrying) return; 
+                            isRetrying = true;
+                            const retryBtn = document.getElementById('retryBtn');
+                            retryBtn.disabled = true;
+                            retryBtn.style.opacity = "0.5";
+                            retryBtn.innerText = "Retrying...";
+                            window.webkit.messageHandlers.retryPageLoad.postMessage(failedUrl);
+                        }
+                    </script>
+                </body>
+                </html>
+                """
+        webView?.loadHTMLString(html, baseURL: nil)
+    }
+    
+    private func isWebUrl(url: String?) -> Bool {
+        return url?.starts(with: "http://") == true ||
+                url?.starts(with: "https://") == true
     }
     
 // Coordinator End
