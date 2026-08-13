@@ -57,9 +57,36 @@ struct FinBoxWebView: UIViewRepresentable {
     func updateUIView(_ uiView: WKWebView, context: Context) {
         guard let sessionURL = urlString else {
             debugPrint("Session URL is empty")
+            lendingResult(
+                FinBoxJourneyResult(
+                    code: FINBOX_RCE_1200_SDK_INIT_ERROR,
+                    screen: "",
+                    message: MESSAGE_RCE_1200
+                )
+            )
             return
         }
-        uiView.load(NetworkUtils.getRequest(urlString: sessionURL))
+        
+        guard let request = NetworkUtils.getRequest(urlString: sessionURL) else {
+            lendingResult(
+                FinBoxJourneyResult(
+                    code: FINBOX_RCE_1200_SDK_INIT_ERROR,
+                    screen: "",
+                    message: MESSAGE_RCE_1200
+                )
+            )
+            return
+        }
+        
+        uiView.load(request)
+    }
+    
+    static func dismantleUIView(_ uiView: WKWebView, coordinator: WebViewCoordinator) {
+        uiView.stopLoading()
+        uiView.navigationDelegate = nil
+        uiView.configuration.userContentController.removeScriptMessageHandler(forName: "FbxLendingiOS")
+        uiView.configuration.userContentController.removeScriptMessageHandler(forName: "callback")
+        uiView.configuration.userContentController.removeAllUserScripts()
     }
     
     func makeCoordinator() -> WebViewCoordinator {

@@ -34,6 +34,7 @@ struct APIService {
         // Null check
         guard let sessionBody = requestBody else {
             debugPrint("Request body is null")
+            handleError(completion: completion, error: MESSAGE_RCE_1200, code: FINBOX_RCE_1200_SDK_INIT_ERROR)
             return
         }
         
@@ -42,6 +43,7 @@ struct APIService {
         
         guard let requestParams = requestParams else {
             debugPrint("Request Params null")
+            handleError(completion: completion, error: MESSAGE_RCE_1200, code: FINBOX_RCE_1200_SDK_INIT_ERROR)
             return
         }
         
@@ -56,12 +58,7 @@ struct APIService {
             // Check if there is a response and data
             guard let httpResponse = response as? HTTPURLResponse, let responseData = data else {
                 debugPrint("Invalid response or no data")
-                return
-            }
-            
-            // Process the data here
-            guard let data = data else {
-                self.handleClientError(completion: completion, error: "Failed to receive Redirect Url")
+                self.handleError(completion: completion, error: MESSAGE_RCE_1200, code: FINBOX_RCE_1200_SDK_INIT_ERROR)
                 return
             }
             
@@ -69,9 +66,10 @@ struct APIService {
             
             do {
                 // Convert the response to object
-                sessionResponse = try JSONDecoder().decode(SessionResponse.self, from: data)
+                sessionResponse = try JSONDecoder().decode(SessionResponse.self, from: responseData)
             } catch {
-                self.handleClientError(completion: completion, error: error)
+                self.handleError(completion: completion, error: error, code: FINBOX_RCE_1200_SDK_INIT_ERROR)
+                return
             }
             
             // Handle the HTTP response
@@ -82,16 +80,17 @@ struct APIService {
                 if let sessionURL = sessionResponse?.data?.url {
                     debugPrint("Got Session URL")
                     // Send the callback
-                    sendCallback(completion: completion, result: SessionResult(error: nil, sessionURL: sessionURL))
+                    sendCallback(completion: completion, result: SessionResult(error: nil, sessionURL: sessionURL, code: nil))
                 } else {
-                    self.handleError(completion: completion, error: "Invalid Session URL")
+                    self.handleError(completion: completion, error: "Invalid Session URL", code: FINBOX_RCE_1200_SDK_INIT_ERROR)
                 }
                 
             case 400...499:
                 // Client error (status code 400 to 499)
                 debugPrint("Client Error Code: \(httpResponse.statusCode)")
                 // Handle client error
-                self.handleClientError(completion: completion, error: sessionResponse?.error ?? "Client Error Occured")
+                let error = sessionResponse?.error ?? "Client Error Occured"
+                self.handleClientError(completion: completion, error: error)
                 
             case 500...599:
                 // Handle server error
@@ -101,6 +100,7 @@ struct APIService {
             default:
                 // Handle other status codes
                 debugPrint("Unexpected status code: \(httpResponse.statusCode)")
+                self.handleError(completion: completion, error: "Unexpected status code: \(httpResponse.statusCode)")
             }
             
         }
@@ -119,7 +119,10 @@ struct APIService {
         }
         
         let jsonEncoder = JSONEncoder()
-        let requestBody = try! jsonEncoder.encode(sessionReq)
+        guard let requestBody = try? jsonEncoder.encode(sessionReq) else {
+            debugPrint("RequestBody: encode failed")
+            return nil
+        }
         
         return requestBody
     }
@@ -157,22 +160,36 @@ struct APIService {
     /// Handles client errors
     func handleClientError(completion: @escaping (SessionResult) -> Void, error: Any) {
         debugPrint("Response Error Client: \(error as Any)")
-        let result = SessionResult(error: String(describing: error), sessionURL: nil)
+        let errorMessage = String(describing: error)
+        let result = SessionResult(error: errorMessage, sessionURL: nil, code: getResultCode(error: errorMessage))
         sendCallback(completion: completion, result: result)
     }
     
     /// Handles server errors
     func handleServerError(completion: @escaping (SessionResult) -> Void, error: Any) {
         debugPrint("Response Error Server: \(String(describing: error))")
-        let result = SessionResult(error: String(describing: error), sessionURL: nil)
+        let result = SessionResult(error: String(describing: error), sessionURL: nil, code: FINBOX_RCE_2000_GENERIC_CODE_ERROR)
         sendCallback(completion: completion, result: result)
     }
     
     /// Handles generic errors
-    func handleError(completion: @escaping (SessionResult) -> Void, error: Any) {
+    func handleError(completion: @escaping (SessionResult) -> Void, error: Any, code: String = FINBOX_RCE_2000_GENERIC_CODE_ERROR) {
         debugPrint("Response Error Generic: \(String(describing: error))")
-        let result = SessionResult(error: String(describing: error), sessionURL: nil)
+        let result = SessionResult(error: String(describing: error), sessionURL: nil, code: getResultCode(error: String(describing: error), defaultCode: code))
         sendCallback(completion: completion, result: result)
+    }
+
+    /// Maps server/client error messages to SDK result codes.
+    func getResultCode(error: String, defaultCode: String = FINBOX_RCE_2000_GENERIC_CODE_ERROR) -> String {
+        let normalizedError = error.lowercased()
+        if normalizedError.contains("token") {
+            return FINBOX_RCE_1100_INVALID_TOKEN
+        }
+        if normalizedError.contains("x-api-key") ||
+            (normalizedError.contains("api") && normalizedError.contains("key")) {
+            return FINBOX_RCE_1000_INVALID_CLIENT_API_KEY
+        }
+        return defaultCode
     }
     
     /// Sends an asynchronous callback after a (slight-possible) delay.

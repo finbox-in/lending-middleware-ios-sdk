@@ -43,7 +43,8 @@ struct ContentView: View {
             .build()
         
         return LendingView { payload in
-            debugPrint("Status Code", payload.code ?? "empty")
+            debugPrint("AS>> Received Status Code", payload.code ?? "empty")
+            isLendingScreenShown = false
         }.navigationBarHidden(true)
     }
 }

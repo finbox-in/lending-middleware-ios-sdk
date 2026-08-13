@@ -25,10 +25,13 @@ public struct LendingView: View {
                     if viewModel.sessionResult?.sessionURL != nil {
                         FinBoxWebView(urlString: viewModel.sessionResult?.sessionURL, lendingResult: lendingResult)
                     } else {
-                        handleError(error: "Invalid session url")
+                        handleError(error: "Invalid session url", code: FINBOX_RCE_1200_SDK_INIT_ERROR)
                     }
                 } else {
-                    handleError(error: viewModel.sessionResult?.error ?? "Unknown Error")
+                    handleError(
+                        error: viewModel.sessionResult?.error ?? "Unknown Error",
+                        code: viewModel.sessionResult?.code ?? FINBOX_RCE_2000_GENERIC_CODE_ERROR
+                    )
                 }
             }.onAppear() {
                 debugPrint("Session Fetched", viewModel.sessionFetched)
@@ -43,8 +46,8 @@ public struct LendingView: View {
         }
     }
     
-    func handleError(error: String) -> some View {
-        lendingResult(FinBoxJourneyResult(code: "", screen: "", message: error))
+    func handleError(error: String, code: String) -> some View {
+        lendingResult(FinBoxJourneyResult(code: code, screen: "", message: error))
         return Text("\(String(describing: error))")
     }
 

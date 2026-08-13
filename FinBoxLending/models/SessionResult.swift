@@ -11,4 +11,5 @@ import Foundation
 struct SessionResult {
     let error: String?
     let sessionURL: String?
+    let code: String?
 }
