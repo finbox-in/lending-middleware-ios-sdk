@@ -97,14 +97,6 @@ struct FinBoxWebView: UIViewRepresentable {
         uiView.load(request)
     }
 
-    // static func dismantleUIView(_ uiView: WKWebView, coordinator: WebViewCoordinator) {
-    //     uiView.stopLoading()
-    //     uiView.navigationDelegate = nil
-    //     uiView.configuration.userContentController.removeScriptMessageHandler(forName: "FbxLendingiOS")
-    //     uiView.configuration.userContentController.removeScriptMessageHandler(forName: "callback")
-    //     uiView.configuration.userContentController.removeAllUserScripts()
-    // }
-
     func makeCoordinator() -> WebViewCoordinator {
         WebViewCoordinator()
     }
