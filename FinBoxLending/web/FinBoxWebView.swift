@@ -11,18 +11,18 @@ import WebKit
 
 
 struct FinBoxWebView: UIViewRepresentable {
-    
+
     let urlString: String?
-    
+
     // Result Function
     public let lendingResult : ((FinBoxJourneyResult) -> Void)
-    
+
     func makeUIView(context: Context) -> WKWebView {
         // Create a configuration
         let config = WKWebViewConfiguration()
         // Create a user controller
         config.userContentController = WKUserContentController()
-        
+
         // Inject platform identifier before page content loads (equivalent to injectedJavaScriptBeforeContentLoaded in React Native)
         // added for jio-respo
         let platformScript = WKUserScript(
@@ -31,13 +31,13 @@ struct FinBoxWebView: UIViewRepresentable {
             forMainFrameOnly: true
         )
         config.userContentController.addUserScript(platformScript)
-        
+
         // Opens camera in image mode
         config.allowsInlineMediaPlayback = true
-        
+
         // Checks whether media playback requires user action (like a tap) in order to start
         config.mediaTypesRequiringUserActionForPlayback = []
-        
+
         let webView = WKWebView(frame: UIScreen.main.bounds, configuration: config)
         config.userContentController.add(
             FinBoxWebViewHandler(
@@ -48,12 +48,12 @@ struct FinBoxWebView: UIViewRepresentable {
         config.userContentController.add(
             AnalyticsCallback(),
             name: "callback")
-        
+
         webView.navigationDelegate = context.coordinator
-        
+
         return webView
     }
-    
+
     func updateUIView(_ uiView: WKWebView, context: Context) {
         guard let sessionURL = urlString else {
             debugPrint("Session URL is empty")
@@ -66,7 +66,7 @@ struct FinBoxWebView: UIViewRepresentable {
             )
             return
         }
-        
+
         guard let request = NetworkUtils.getRequest(urlString: sessionURL) else {
             lendingResult(
                 FinBoxJourneyResult(
@@ -77,18 +77,18 @@ struct FinBoxWebView: UIViewRepresentable {
             )
             return
         }
-        
+
         uiView.load(request)
     }
-    
-    static func dismantleUIView(_ uiView: WKWebView, coordinator: WebViewCoordinator) {
-        uiView.stopLoading()
-        uiView.navigationDelegate = nil
-        uiView.configuration.userContentController.removeScriptMessageHandler(forName: "FbxLendingiOS")
-        uiView.configuration.userContentController.removeScriptMessageHandler(forName: "callback")
-        uiView.configuration.userContentController.removeAllUserScripts()
-    }
-    
+
+    // static func dismantleUIView(_ uiView: WKWebView, coordinator: WebViewCoordinator) {
+    //     uiView.stopLoading()
+    //     uiView.navigationDelegate = nil
+    //     uiView.configuration.userContentController.removeScriptMessageHandler(forName: "FbxLendingiOS")
+    //     uiView.configuration.userContentController.removeScriptMessageHandler(forName: "callback")
+    //     uiView.configuration.userContentController.removeAllUserScripts()
+    // }
+
     func makeCoordinator() -> WebViewCoordinator {
         WebViewCoordinator()
     }
