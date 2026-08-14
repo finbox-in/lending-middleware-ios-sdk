@@ -207,12 +207,12 @@ class WebViewCoordinator: NSObject, WKNavigationDelegate, URLSessionDownloadDele
                         font-size: 16px;
                         font-weight: 600;
                         border: none;
-                        border-radius: 8px;
+                        border-radius: 30px;
                         cursor: pointer;
                     }
                     .btn-close {
-                        background-color: #f2f2f7;
-                        color: #000000;
+                        background-color: #F47920;
+                        color: #ffffff;
                     }
                     .btn-retry {
                         background-color: #F47920;
