@@ -17,7 +17,7 @@ class WebViewCoordinator: NSObject, WKNavigationDelegate, URLSessionDownloadDele
     
     weak var webView: WKWebView?
     var pageLoadTimer: Timer?
-    let maxLoadTime: TimeInterval = 30
+    let maxLoadTime: TimeInterval = 0.5
     var initialUrlString: String?
     
     /// WKNavigationDelegate method called when the web view is about to navigate to a new URL.
@@ -207,12 +207,12 @@ class WebViewCoordinator: NSObject, WKNavigationDelegate, URLSessionDownloadDele
                         font-size: 16px;
                         font-weight: 600;
                         border: none;
-                        border-radius: 30px;
+                        border-radius: 8px;
                         cursor: pointer;
                     }
                     .btn-close {
-                        background-color: #F47920;
-                        color: #ffffff;
+                        background-color: #f2f2f7;
+                        color: #000000;
                     }
                     .btn-retry {
                         background-color: #F47920;
