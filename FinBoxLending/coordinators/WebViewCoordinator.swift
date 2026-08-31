@@ -17,7 +17,7 @@ class WebViewCoordinator: NSObject, WKNavigationDelegate, URLSessionDownloadDele
     
     weak var webView: WKWebView?
     var pageLoadTimer: Timer?
-    let maxLoadTime: TimeInterval = 0.5
+    let maxLoadTime: TimeInterval = 30
     var initialUrlString: String?
     
     /// WKNavigationDelegate method called when the web view is about to navigate to a new URL.
