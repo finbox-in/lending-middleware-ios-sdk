@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28060112302D9A4B00DF3EEB /* SessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28060111302D9A4B00DF3EEB /* SessionRequest.swift */; };
+		2858E571302EF2A800AAFF25 /* Wormholy in Frameworks */ = {isa = PBXBuildFile; productRef = 2858E570302EF2A800AAFF25 /* Wormholy */; };
 		3709B7D42B14907D00052CB3 /* WebEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3709B7D32B14907D00052CB3 /* WebEventResponse.swift */; };
 		3729CB4E2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CB4D2B0DF6A800E0D9C8 /* FinBoxJourneyResult.swift */; };
 		3729CB502B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3729CB4F2B0DF87C00E0D9C8 /* FinBoxWebViewHandler.swift */; };
@@ -134,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D8CBABD2B0CDB0D005D4275 /* FinBoxLending.framework in Frameworks */,
+				2858E571302EF2A800AAFF25 /* Wormholy in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +420,9 @@
 				Base,
 			);
 			mainGroup = 6D8CBA512B0A84B0005D4275;
+			packageReferences = (
+				2858E56F302EF2A800AAFF25 /* XCRemoteSwiftPackageReference "wormholy" */,
+			);
 			productRefGroup = 6D8CBA5C2B0A84B0005D4275 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -853,6 +858,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2858E56F302EF2A800AAFF25 /* XCRemoteSwiftPackageReference "wormholy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pmusolino/wormholy";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2858E570302EF2A800AAFF25 /* Wormholy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2858E56F302EF2A800AAFF25 /* XCRemoteSwiftPackageReference "wormholy" */;
+			productName = Wormholy;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6D8CBA522B0A84B0005D4275 /* Project object */;
 }
